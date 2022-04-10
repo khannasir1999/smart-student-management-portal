@@ -9,14 +9,8 @@ return(
   <BrowserRouter>
         
         <Routes>
-          
-          <Route  path = "/" element={<Login />}>
-            
-            <Route path="/Dashboard" index element={<Dashboard/>} />
-            
-        
-          
-          </Route>
+            <Route path="/"  index element ={<Login/>}/>
+            <Route path="/Dashboard" element={<Dashboard/>} />
         
         </Routes>
       </BrowserRouter>
