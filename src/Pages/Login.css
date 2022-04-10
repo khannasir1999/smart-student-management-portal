@@ -1,0 +1,28 @@
+
+
+  
+  .signin_form{
+      
+    background-color: pink;
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border-color: black;
+    border: 3px solid #ccc;
+    width: 20rem;
+    max-width: 100%;
+   
+    
+    font-weight: bold;
+  }
+  .email_input{
+      height: 2rem;
+      width: 15rem;
+      font-size: medium;
+
+  }
+  .password{
+    height: 2rem;
+    width: 15rem;
+  }
+ 
