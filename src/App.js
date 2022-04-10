@@ -9,8 +9,19 @@ return(
   <BrowserRouter>
         
         <Routes>
+<<<<<<< HEAD
             <Route path="/"  index element ={<Login/>}/>
             <Route path="/Dashboard" element={<Dashboard/>} />
+=======
+          
+          <Route  path = "/" index element={<Login />}/>
+            
+            <Route path="/Dashboard" element={<Dashboard/>} />
+            
+        
+          
+        
+>>>>>>> 65617ead2abe49978d28059c1faf3741a0a896f4
         
         </Routes>
       </BrowserRouter>

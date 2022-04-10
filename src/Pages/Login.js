@@ -1,4 +1,4 @@
-import "./Login.css"
+import "./Login.css";
 import { Outlet, Link } from "react-router-dom";
 const Login = () => {
 
@@ -28,3 +28,4 @@ const Login = () => {
   );
 };
 export default Login;
+
