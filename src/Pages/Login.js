@@ -1,14 +1,8 @@
-import "./Login.css"
+import "./Login.css";
 import { Outlet, Link } from "react-router-dom";
 const Login = () => {
 
-  const submitHandler = () => {
-    <link to="/Dashboard"> </link>
-    
-    console.log("signin");
-
-
-  }
+  
   return (
     <div className="signin_form">
 
@@ -19,13 +13,16 @@ const Login = () => {
         
       <input type="password" placeholder="password" className="password"/>
         <p>password</p>
-<Link to="/Dashboard">
+
+        <Link to="/Dashboard">
+
 <button type="submit" >Signin</button>
-</Link>
-        
+
+        </Link>
       </form>
     
     </div>
   );
 };
 export default Login;
+
