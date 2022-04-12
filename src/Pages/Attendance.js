@@ -1,8 +1,12 @@
 import React from 'react'
 
-export default function Attendance() {
+function Attendance() {
   return (
-      <h1>Attendance</h1>
-   
-  )
-};
+    <h1>Attendance</h1>
+  );
+}
+
+console.log("Ateendence");
+
+export default Attendance;
+

@@ -4,7 +4,10 @@ import NavBar from "../Components/NavBar";
 
 const Dashboard = () => {
     return (
-        <NavBar/>
+        <>
+    
+        <h1>hksdjhf</h1>
+        </>
     );
 }
 export default Dashboard;

@@ -8,23 +8,32 @@ import Fees from './Pages/Fees'
 import Profile from './Pages/Profile'
 import NavBar from "./Components/NavBar";
 
+
 function App() {
   return (
+    <>
+    
     <BrowserRouter>
       <Routes>
         <Route path="/" index element={<Login />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
+        {/* <Route path="/Dashboard" element={<Dashboard />} /> */}
+        <Route path = "Login" element = {<Login/>} />
 
-        <Route path='/' element={<NavBar/>}>
+        
+
+        <Route element={<NavBar/>}>
         <Route path="dashboard" element={<Dashboard/>}/> 
         <Route path="attendance" element={<Attendance/>}/>
-        <Route path="registration-card" element={<RegisterationCard/>} />
+        <Route path="registration_card" element={<RegisterationCard/>} />
         <Route path="fees" element={<Fees/>} />
         <Route path="profile" element={<Profile/>} />
         </Route>
       </Routes>
     </BrowserRouter>
+    </>
   );
+  
+  
 }
 
 export default App;
