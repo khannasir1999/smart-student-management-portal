@@ -1,0 +1,63 @@
+.head {
+  background-image: url(https://www.aud.edu/media/ps0puzin/website-latest-2.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  min-height: 100%;
+  max-width: 100%;
+  max-height: 98%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+
+.nav-bar ul {
+  float: right;
+  margin: 30px 10px 10px 10px;
+  list-style: none;
+}
+.nav-bar ul li {
+  float: left;
+  margin: 5px;
+}
+.heading {
+  margin: 10px 30px;
+  font-size: 20px;
+  font-weight: bolder;
+  display: inline;
+  float: left;
+  border-bottom: 10px solid rgb(175, 103, 9);
+  border-radius: 10px;
+
+}
+
+.nav-bar ul li:hover {
+  border-bottom: 10px solid rgb(12, 18, 102);
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+h1{
+  color: rgb(5, 10, 73);
+   
+}
+.overlay {
+  margin-top: 350px;
+  margin-left: 30px;
+  font-size: 30px;
+}
+.sheading {
+  color: rgb(247, 247, 247);
+  font-weight: bolder;
+}
+.lheading{
+  color: rgb(255, 242, 218);
+  font-size: 15px;
+}
+

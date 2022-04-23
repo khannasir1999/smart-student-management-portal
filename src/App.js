@@ -7,6 +7,7 @@ import RegisterationCard from './Pages/RegisterationCard'
 import Fees from './Pages/Fees'
 import Profile from './Pages/Profile'
 import NavBar from "./Components/NavBar";
+import FrontScreen from "./Pages/FrontScreen";
 
 
 function App() {
@@ -16,12 +17,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" index element={<Login />} />
-        {/* <Route path="/Dashboard" element={<Dashboard />} /> */}
         <Route path = "Login" element = {<Login/>} />
 
         
 
-        <Route element={<NavBar/>}>
+        <Route element={<NavBar/>} path="home">
         <Route path="dashboard" element={<Dashboard/>}/> 
         <Route path="attendance" element={<Attendance/>}/>
         <Route path="registration_card" element={<RegisterationCard/>} />
