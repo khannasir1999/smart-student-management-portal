@@ -7,7 +7,7 @@ import RegisterationCard from './Pages/RegisterationCard'
 import Fees from './Pages/Fees'
 import Profile from './Pages/Profile'
 import NavBar from "./Components/NavBar";
-import FrontScreen from "./Pages/FrontScreen";
+
 
 
 function App() {

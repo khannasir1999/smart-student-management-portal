@@ -24,7 +24,7 @@ const ModelSignup = () => {
       <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
 
         <form>
-          <label htmlFor="name">Name</label>
+         <input type="text"></input>
         
         </form>
         

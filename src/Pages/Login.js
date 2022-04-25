@@ -23,6 +23,8 @@ function Login() {
     const data = {
       email: loginInput.email,
       password: loginInput.password,
+      
+    
     };
 
     axios
@@ -32,13 +34,14 @@ function Login() {
           localStorage.setItem("auth_user", res.data.user);
           localStorage.setItem("auth_token", res.data.token);
           swal("succsess", "Success", "success");
-          navigate("/home/dashboard");
+          navigate("/home/Dashboard");
         }
       })
       .catch((err) => {
         setLogin({
           ...loginInput,
-          error: "The provided credentials are incorrect.",
+          //error: "The provided credentials are incorrect.",
+         error: swal("Warning", "login failed", "Warning")
         });
       });
   };
