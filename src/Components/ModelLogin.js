@@ -95,8 +95,7 @@ const ModelLogin = (props) => {
         </form>
         <div className="form">
           Don't have account?{" "}
-          <button
-            style={{ border: "1px", backgroundColor: "white", color: "red" }}
+          <button className="switch-btn"
             onClick={handleModol}
           >
             Create Account
