@@ -35,7 +35,7 @@ const ModelSignup = (props) => {
 
         </form>
         <div className="form">
-            Already have account? <button style={{border:"1px",backgroundColor:"white",color:"red"}} onClick={handleModol}>Login</button>
+            Already have account? <button className='switch-btn' onClick={handleModol}>Login</button>
           </div>
 
       </Modal>

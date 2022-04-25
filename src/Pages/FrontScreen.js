@@ -31,10 +31,10 @@ const FrontScreen = () => {
           </li>
         </ul>
       </div>
-      <div class="overlay">
-        <div class="sheading">
+      <div className="overlay">
+        <div className="sheading">
           EMPOWERING THE LEADERS OF THE FUTURE
-          <div class="lheading">
+          <div className="lheading">
             We aim to inspire, innovate and educate; to engage curiosity and
             challenge you <br /> to excel academically, personally and
             professionally.

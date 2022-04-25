@@ -20,3 +20,12 @@
     background-color: #1890ff;
     color: white;
 }
+.switch-btn{
+    border: 1px;
+     background-color: white ;
+     color: red
+
+}
+.switch-btn:hover{
+    font-weight: bold;
+}
