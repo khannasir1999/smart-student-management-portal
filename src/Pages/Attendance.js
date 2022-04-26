@@ -6,7 +6,5 @@ function Attendance() {
   );
 }
 
-console.log("Ateendence");
-
 export default Attendance;
 

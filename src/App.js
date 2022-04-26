@@ -16,9 +16,9 @@ function App() {
     
     <BrowserRouter>
       <Routes>
-      //routes of mainpage
+      {/* routes of mainpage */}
         <Route path="/" index element={<FrontScreen/>} />
-       //routes of navbar
+       {/* routes of navbar */}
         <Route path="/" element={<NavBar/>} >
           <Route path="dashboard" element={<Dashboard/>}/> 
           <Route path="attendance" element={<Attendance/>}/>

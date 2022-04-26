@@ -29,3 +29,7 @@
 .switch-btn:hover{
     font-weight: bold;
 }
+.form-err{
+    color: red;
+    font-size: 11px;
+}
