@@ -43,16 +43,18 @@ const ModelLogin = (props) => {
       const res = await axios.post("http://localhost:8000/api/admin_login", {
         email: inputEmail,
         password: inputPassword,
+        
       });
       if (res.status === 200) {
         localStorage.setItem("auth_user", res.data.user);
         localStorage.setItem("auth_token", res.data.token);
+      
         swal("Welcome Back", "Successfully Loged in ", "success");
         props.setIsLoginVisible(false);
         navigate("/dashboard");
       }
     } catch (error) {
-      setInputError("The provided credentials are incorrect.");
+      setInputError("invalid credentials");
     }
   };
 
@@ -94,7 +96,7 @@ const ModelLogin = (props) => {
           
         </form>
         <div className="form">
-          Don't have account?{" "}
+          Don't have account?
           <button className="switch-btn"
             onClick={handleModol}
           >
