@@ -3,7 +3,7 @@ import { Modal, Button } from "antd";
 import "./Components_Styles/Model.css";
 import axios from "axios";
 import swal from "sweetalert";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ModelLogin = (props) => {
   // code of model visibility........
@@ -26,15 +26,17 @@ const ModelLogin = (props) => {
   const [inputError, setInputError] = useState("");
 
   useEffect(() => {
-    if(inputEmail){
-    setInputError("")}
+    if (inputEmail) {
+      setInputError("")
+    }
   }, [inputEmail]);
 
   useEffect(() => {
-    if(inputPassword){
-    setInputError("")}
+    if (inputPassword) {
+      setInputError("")
+    }
   }, [inputPassword])
-  
+
 
   const loginSubmit = async (e) => {
     e.preventDefault();
@@ -48,8 +50,12 @@ const ModelLogin = (props) => {
       if (res.status === 200) {
         localStorage.setItem("auth_user", res.data.user);
         localStorage.setItem("auth_token", res.data.token);
-      
-        swal("Welcome Back", "Successfully Loged in ", "success");
+        swal({
+          position: 'center',
+          icon: 'success',
+          title: 'Successfully Loged in',
+          timer: 1500
+        })
         props.setIsLoginVisible(false);
         navigate("/dashboard");
       }
@@ -87,13 +93,13 @@ const ModelLogin = (props) => {
             value={inputPassword}
             onChange={(e) => setInputPassword(e.target.value)}
           />
-        <div style={{ color: "red", margin: "10px" }}>{inputError}</div>
+          <div style={{ color: "red", margin: "10px" }}>{inputError}</div>
 
           <button className="form-btn" type="submit">
             Login
           </button>
 
-          
+
         </form>
         <div className="form">
           Don't have account?

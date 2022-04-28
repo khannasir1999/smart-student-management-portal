@@ -29,3 +29,22 @@
 .switch-btn:hover{
     font-weight: bold;
 }
+.form-err{
+    color: red;
+    font-size: 11px;
+}
+.logout-btn{
+    background-color: yellow;
+    background-repeat:no-repeat;
+    border-radius: 5px;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    display: center;
+    height: 50px;
+    width: 60px;
+    text-align: center;
+    color: red;
+    
+    
+}
