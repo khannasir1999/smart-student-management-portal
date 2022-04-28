@@ -47,7 +47,9 @@ const TeacherNavbar = () => {
 		<NavLink to="/TeacherDashboard" >
 			Dashboard
 		</NavLink>
-		
+        <NavLink to="/MarkAttendance" >
+			Mark Attendence
+		</NavLink>
 		
 		
 		</NavMenu>

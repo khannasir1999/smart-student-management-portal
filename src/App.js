@@ -1,7 +1,7 @@
 import "./App.css";
 import Dashboard from "./Pages/Dashboard";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Teacher from './Pages/Teacher'
+import Attendance from './Pages/Attendance'
 import RegisterationCard from './Pages/RegisterationCard'
 import Fees from './Pages/Fees'
 import Profile from './Pages/Profile'
@@ -10,8 +10,7 @@ import FrontScreen from "./Pages/FrontScreen";
 import axios from "axios";
 import TeacherDashboard from "./Pages/TeacherDashboard";
 import TeacherNavbar from "./Components/TeacherNavbar";
-
-
+import MarkAttendance from "./Pages/MarkAttendence";
 
 function App() {
 
@@ -30,14 +29,15 @@ function App() {
        {/* routes of navbar */}
         <Route path="/" element={<NavBar/>} >
           <Route path="dashboard" element={<Dashboard/>}/> 
-          <Route path="teacher" element={<Teacher/>}/>
+          <Route path="attendance" element={<Attendance/>}/>
           <Route path="registration_card" element={<RegisterationCard/>} />
           <Route path="fees" element={<Fees/>} />
           <Route path="profile" element={<Profile/>} />
         </Route>
         {/* routes for teacher */}
         <Route path="/" element = {<TeacherNavbar/>}>
-          <Route path="TeacherDashboard"element ={<TeacherDashboard/>}/>
+          <Route path="TeacherDashboard" element ={<TeacherDashboard/>}/>
+          <Route path="MarkAttendence" element ={<MarkAttendance/>}/>
 
         </Route>
     
