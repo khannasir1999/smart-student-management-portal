@@ -8,7 +8,8 @@ import Profile from './Pages/Profile'
 import NavBar from "./Components/NavBar";
 import FrontScreen from "./Pages/FrontScreen";
 import axios from "axios";
-
+import TeacherDashboard from "./Pages/TeacherDashboard";
+import TeacherNavbar from "./Components/TeacherNavbar";
 
 
 
@@ -34,6 +35,12 @@ function App() {
           <Route path="fees" element={<Fees/>} />
           <Route path="profile" element={<Profile/>} />
         </Route>
+        {/* routes for teacher */}
+        <Route path="/" element = {<TeacherNavbar/>}>
+          <Route path="TeacherDashboard"element ={<TeacherDashboard/>}/>
+
+        </Route>
+    
       </Routes>
     </BrowserRouter>
     </>

@@ -6,7 +6,7 @@ NavLink,
 Bars,
 NavMenu,
 NavBtn,
-NavBtnLink,
+
 } from './NavbarElements';
 import { Outlet } from 'react-router-dom';
 import axios from 'axios';
@@ -50,7 +50,7 @@ return (
 			Registration card
 		</NavLink>
 		<NavLink to="/fees" >
-			Fee
+			fee
 		</NavLink>
 		<NavLink to="/profile" >
 			Profile
