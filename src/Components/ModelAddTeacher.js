@@ -13,7 +13,7 @@ const ModelAddTeacher = () => {
   const handleCancel = () => {
     setIsSignupVisible(false);
   };
-  
+
 
   // code for post register data.........................................
 
@@ -68,10 +68,10 @@ const ModelAddTeacher = () => {
       swal({
         position: "center",
         icon: "success",
-        title: "Successfully Signed up",
+        title: "Teacher Added",
         timer: 1000,
       });
-    
+
     } catch (error) {
       setErrName(error.response.data.errors.name);
       setErrEmail(error.response.data.errors.email);
@@ -139,10 +139,10 @@ const ModelAddTeacher = () => {
             onChange={(e) => setRegisterPassword_confirmation(e.target.value)}
           />
           <button type="submit" className="form-btn">
-            Sign Up
+            Add
           </button>
         </form>
-        
+
       </Modal>
     </>
   );

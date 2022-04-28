@@ -1,0 +1,28 @@
+
+table {
+    font-family: arial, sans-serif;
+    width: 100%;
+  }
+  
+  thead,
+  tbody {
+    text-align: left;
+    font-size: large;
+  }
+  tr {
+    margin: 200px;
+    box-shadow: 5px 10px #888888;
+    
+  }
+  
+  thead,
+  th {
+    background-color: #dddddd;
+    font-size: larger;
+    border: 3px solid #c4c3c3;
+    padding: 5px;
+  }
+  tbody td{
+    padding: 10px;
+  }
+  

@@ -6,9 +6,6 @@ import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 
 const ModelLogin = (props) => {
-  const login_teacher = (e) => {
-    
-  }
   // code of model visibility........
   const showModal = () => {
     props.setIsLoginVisible(true);
