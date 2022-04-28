@@ -34,17 +34,11 @@
     font-size: 11px;
 }
 .logout-btn{
-    background-color: yellow;
-    background-repeat:no-repeat;
-    border-radius: 5px;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
-    display: center;
-    height: 50px;
-    width: 60px;
-    text-align: center;
-    color: red;
-    
-    
+   border: 1px  ;
+   padding: 10px;
+   height: 50%;
+   margin-top: 20px;
+   background-color: #1890ff;
+    color: white;
+      
 }
