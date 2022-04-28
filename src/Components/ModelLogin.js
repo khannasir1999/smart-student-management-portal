@@ -6,6 +6,9 @@ import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 
 const ModelLogin = (props) => {
+  const login_teacher = (e) => {
+    
+  }
   // code of model visibility........
   const showModal = () => {
     props.setIsLoginVisible(true);
@@ -37,12 +40,42 @@ const ModelLogin = (props) => {
     }
   }, [inputPassword])
 
-
+//Login as an admin
   const loginSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const res = await axios.post("http://localhost:8000/api/admin_login", {
+        email: inputEmail,
+        password: inputPassword,
+        
+      });
+      if (res.status === 200) {
+        localStorage.setItem("auth_user", res.data.user);
+        localStorage.setItem("auth_token", res.data.token);
+        swal({
+          position: 'center',
+          icon: 'success',
+          title: 'Successfully Loged in',
+          timer: 1500
+        })
+        props.setIsLoginVisible(false);
+        navigate("/dashboard");
+      }
+    } catch (error) {
+      setInputError("invalid credentials");
+    }
+  };
+
+
+
+
+
+  const loginteacher = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await axios.post("http://localhost:8000/api/teacher_login", {
         email: inputEmail,
         password: inputPassword,
         
@@ -76,7 +109,7 @@ const ModelLogin = (props) => {
         cancelButtonProps={{ style: { display: "none" } }}
         okButtonProps={{ style: { display: "none" } }}
       >
-        <form onSubmit={loginSubmit} className="form">
+        <form className="form">
           <input
             type="email"
             name="email"
@@ -95,17 +128,16 @@ const ModelLogin = (props) => {
           />
           <div style={{ color: "red", margin: "10px" }}>{inputError}</div>
 
-          <button className="form-btn" type="submit">
-            Login
+          <button className="form-btn" type="submit" onClick={loginSubmit}>
+            Login as an admin
           </button>
-
-
+          <button className="form-btn" type="submit" onClick={loginteacher}>
+            Login as a teacher
+          </button>
         </form>
         <div className="form">
           Don't have account?
-          <button className="switch-btn"
-            onClick={handleModol}
-          >
+          <button className="switch-btn" onClick={handleModol}>
             Create Account
           </button>
         </div>
