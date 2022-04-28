@@ -1,14 +1,11 @@
 import "./Dashboard.css";
-
-
-
+import ModelAddTeacher from "../Components/ModelAddTeacher";
 const Dashboard = () => {
+    
+    
     return (
         <>
-    
-        <h1>
-            Dashboard
-        </h1>
+    <ModelAddTeacher/>
         </>
     );
 }
