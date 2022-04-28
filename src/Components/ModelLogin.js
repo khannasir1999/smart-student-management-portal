@@ -6,7 +6,7 @@ import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 
 const ModelLogin = (props) => {
- 
+
   // code of model visibility........
   const showModal = () => {
     props.setIsLoginVisible(true);
@@ -38,7 +38,7 @@ const ModelLogin = (props) => {
     }
   }, [inputPassword])
 
-//Login as an admin
+  //Login as an admin
   const loginSubmit = async (e) => {
     e.preventDefault();
 
@@ -46,7 +46,7 @@ const ModelLogin = (props) => {
       const res = await axios.post("http://localhost:8000/api/admin_login", {
         email: inputEmail,
         password: inputPassword,
-        
+
       });
       if (res.status === 200) {
         localStorage.setItem("auth_user", res.data.user);
@@ -67,7 +67,7 @@ const ModelLogin = (props) => {
 
 
 
-//login as teacher
+  //login as teacher
 
   const loginteacher = async (e) => {
     e.preventDefault();
@@ -76,7 +76,7 @@ const ModelLogin = (props) => {
       const res = await axios.post("http://localhost:8000/api/teacher_login", {
         email: inputEmail,
         password: inputPassword,
-        
+
       });
       if (res.status === 200) {
         localStorage.setItem("auth_user", res.data.user);

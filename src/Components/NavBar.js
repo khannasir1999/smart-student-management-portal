@@ -36,15 +36,15 @@ const NavBar = () => {
 	}
 return (
 	<>
-	<Nav>
+	<Nav style={{backgroundColor:" rgb(0,0,0)",backgroundColor:" rgba(0,0,0, 0.2)" , color:"black"}} >
 		<Bars />
 
 		<NavMenu>
-		<NavLink to="/dashboard" >
+		<NavLink to="/dashboard">
 			Dashboard
 		</NavLink>
-		<NavLink to="/attendance" >
-			Attendance
+		<NavLink to="/teacher" >
+			Teacher
 		</NavLink>
 		<NavLink to="/registration_card" >
 			Registration card

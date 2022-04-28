@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import swal from "sweetalert";
 
-const ModelAddTeacher = () => {
+const ModelAddTeacher = (props) => {
   // code of model visibility..........................................
   const [isSignupVisible, setIsSignupVisible] = useState(false);
   const showModal = () => {
@@ -63,6 +63,7 @@ const ModelAddTeacher = () => {
         password: registerPassword,
         password_confirmation: registerPassword_confirmation,
       });
+      props.teacherData()
       console.log(res);
       setIsSignupVisible(false);
       swal({

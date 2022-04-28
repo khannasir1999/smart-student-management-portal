@@ -1,13 +1,12 @@
 
 table {
-    font-family: arial, sans-serif;
     width: 100%;
   }
   
   thead,
   tbody {
     text-align: left;
-    font-size: large;
+    font-size: 20px;
   }
   tr {
     margin: 200px;
@@ -17,9 +16,10 @@ table {
   
   thead,
   th {
-    background-color: #dddddd;
+    background-color: rgb(22, 20, 20);
+    color: white;
     font-size: larger;
-    border: 3px solid #c4c3c3;
+    border: 3px solid #c4c3c3c7;
     padding: 5px;
   }
   tbody td{
