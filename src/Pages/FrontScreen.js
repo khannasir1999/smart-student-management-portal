@@ -8,7 +8,8 @@ const FrontScreen = () => {
   const [isSignupVisible, setIsSignupVisible] = useState(false);
 
   return (
-    <div className="head">
+  <div className="head">
+    <div className="over-lay">
       <div className="nav-bar">
         <div className="heading">
           <h1>Stanford University</h1>
@@ -40,6 +41,7 @@ const FrontScreen = () => {
             professionally.
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
