@@ -6,9 +6,7 @@ import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 
 const ModelLogin = (props) => {
-  const login_teacher = (e) => {
-    
-  }
+ 
   // code of model visibility........
   const showModal = () => {
     props.setIsLoginVisible(true);
@@ -69,7 +67,7 @@ const ModelLogin = (props) => {
 
 
 
-
+//login as teacher
 
   const loginteacher = async (e) => {
     e.preventDefault();
@@ -90,7 +88,7 @@ const ModelLogin = (props) => {
           timer: 1500
         })
         props.setIsLoginVisible(false);
-        navigate("/dashboard");
+        navigate("/TeacherDashboard");
       }
     } catch (error) {
       setInputError("invalid credentials");
