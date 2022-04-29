@@ -12,7 +12,7 @@ const FrontScreen = () => {
     <div className="over-lay">
       <div className="nav-bar">
         <div className="heading">
-          <h1>Stanford University</h1>
+          <h1 className="heading-text">Stanford University</h1>
         </div>
         <ul>
           <li>
