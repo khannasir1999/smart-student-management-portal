@@ -6,12 +6,23 @@ table {
   thead,
   tbody {
     text-align: left;
-    font-size: 20px;
+    font-size: 15px;
+    font-weight:200px;
+   
   }
   tr {
     margin: 200px;
     box-shadow: 5px 10px #888888;
     
+  }
+  .td-btn{
+    text-align: center;
+    width: 150px;
+   
+
+  }
+  .td-id{
+      font-weight: bold;
   }
   
   thead,

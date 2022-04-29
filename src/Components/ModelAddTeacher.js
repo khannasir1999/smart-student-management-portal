@@ -6,24 +6,33 @@ import swal from "sweetalert";
 
 const ModelAddTeacher = (props) => {
   // code of model visibility..........................................
-  const [isSignupVisible, setIsSignupVisible] = useState(false);
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (props.title === "create") {
+      registerUser()
+    } else {
+      props.editTeacher()
+    }
+  }
+
   const showModal = () => {
-    setIsSignupVisible(true);
+    props.setIsSignupVisible(true);
+    props.setTitle("create")
   };
   const handleCancel = () => {
-    setIsSignupVisible(false);
+    props.setIsSignupVisible(false);
   };
 
 
   // code for post register data.........................................
 
   // states for registration user.........
-  const [registerName, setRegisterName] = useState("");
-  const [registerEmail, setRegisterEmail] = useState("");
-  const [registerPhone_no, setRegisterPhone_no] = useState("");
-  const [registerPassword, setRegisterPassword] = useState("");
-  const [registerPassword_confirmation, setRegisterPassword_confirmation] =
-    useState("");
+  // const [registerName, setRegisterName] = useState("");
+  // const [registerEmail, setRegisterEmail] = useState("");
+  // const [registerPhone_no, setRegisterPhone_no] = useState("");
+  // const [registerPassword, setRegisterPassword] = useState("");
+  // const [registerPassword_confirmation, setRegisterPassword_confirmation] =
+  //   useState("");
 
   //code for error handaling............
   const [errName, setErrName] = useState("");
@@ -33,11 +42,11 @@ const ModelAddTeacher = (props) => {
 
   useEffect(() => {
     if (
-      registerName ||
-      registerEmail ||
-      registerPhone_no ||
-      registerPassword ||
-      registerPassword_confirmation
+      props.registerName ||
+      props.registerEmail ||
+      props.registerPhone_no ||
+      props.registerPassword ||
+      props.registerPassword_confirmation
     ) {
       setErrName("");
       setErrEmail("");
@@ -45,32 +54,32 @@ const ModelAddTeacher = (props) => {
       setErrPhone_no("");
     }
   }, [
-    registerName,
-    registerEmail,
-    registerPassword,
-    registerPassword_confirmation,
-    registerPhone_no,
+    props.registerName,
+    props.registerEmail,
+    props.registerPassword,
+    props.registerPassword_confirmation,
+    props.registerPhone_no,
   ]);
 
   // fucntion for registration of data...
-  const registerUser = async (e) => {
-    e.preventDefault();
+  const registerUser = async () => {
+
     try {
       const res = await axios.post("http://localhost:8000/api/teachers", {
-        name: registerName,
-        email: registerEmail,
-        phone_no: registerPhone_no,
-        password: registerPassword,
-        password_confirmation: registerPassword_confirmation,
+        name: props.registerName,
+        email: props.registerEmail,
+        phone_no: props.registerPhone_no,
+        password: props.registerPassword,
+        password_confirmation: props.registerPassword_confirmation,
       });
-      props.teacherData()
+      props.getTeacher()
       console.log(res);
-      setIsSignupVisible(false);
+      props.setIsSignupVisible(false);
       swal({
         position: "center",
         icon: "success",
         title: "Teacher Added",
-        timer: 1000,
+        timer: 1500,
       });
 
     } catch (error) {
@@ -84,24 +93,24 @@ const ModelAddTeacher = (props) => {
   return (
     <>
       <Button type="primary" onClick={showModal}>
-        Add Teacher
+        + Add
       </Button>
       <Modal
-        title="Add Teacher"
-        visible={isSignupVisible}
+        title={props.title === "create" ? "Add Teacher" : "Edit Data"}
+        visible={props.isSignupVisible}
         onCancel={handleCancel}
         cancelButtonProps={{ style: { display: "none" } }}
         okButtonProps={{ style: { display: "none" } }}
       >
-        <form className="form" onSubmit={registerUser}>
+        <form className="form" onSubmit={handleSubmit}>
           <div className="form-err">{errName}</div>
           <input
             type="text"
             name="name"
             placeholder=" Enter Name"
             className="form-input"
-            value={registerName}
-            onChange={(e) => setRegisterName(e.target.value)}
+            value={props.registerName}
+            onChange={(e) => props.setRegisterName(e.target.value)}
           />
           <div className="form-err">{errEmail}</div>
           <input
@@ -109,8 +118,8 @@ const ModelAddTeacher = (props) => {
             name="email"
             placeholder=" Enter Email"
             className="form-input"
-            value={registerEmail}
-            onChange={(e) => setRegisterEmail(e.target.value)}
+            value={props.registerEmail}
+            onChange={(e) => props.setRegisterEmail(e.target.value)}
           />
           <div className="form-err">{errPhone_no}</div>
           <input
@@ -118,8 +127,8 @@ const ModelAddTeacher = (props) => {
             name="phone_no"
             placeholder=" Enter Phone Number"
             className="form-input"
-            value={registerPhone_no}
-            onChange={(e) => setRegisterPhone_no(e.target.value)}
+            value={props.registerPhone_no}
+            onChange={(e) => props.setRegisterPhone_no(e.target.value)}
           />
           <div className="form-err">{errPassword}</div>
           <input
@@ -127,8 +136,8 @@ const ModelAddTeacher = (props) => {
             name="password"
             placeholder=" Enter Password"
             className="form-input"
-            value={registerPassword}
-            onChange={(e) => setRegisterPassword(e.target.value)}
+            value={props.registerPassword}
+            onChange={(e) => props.setRegisterPassword(e.target.value)}
           />
           <div className="form-err">{errPassword}</div>
           <input
@@ -136,8 +145,8 @@ const ModelAddTeacher = (props) => {
             name="confirm-password"
             placeholder=" Confirm Password"
             className="form-input"
-            value={registerPassword_confirmation}
-            onChange={(e) => setRegisterPassword_confirmation(e.target.value)}
+            value={props.registerPassword_confirmation}
+            onChange={(e) => props.setRegisterPassword_confirmation(e.target.value)}
           />
           <button type="submit" className="form-btn">
             Add

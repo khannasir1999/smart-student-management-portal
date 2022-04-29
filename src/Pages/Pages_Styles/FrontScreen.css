@@ -56,9 +56,9 @@
   font-size: 20px;
 }
 
-h1{
+.heading-text{
   color: rgb(211, 197, 197);
-  text-shadow:2px 2px  #ff1818 ;
+  text-shadow:7px 7px  #352424 ;
    
 }
 .overlay {
