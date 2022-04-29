@@ -36,7 +36,7 @@ const NavBar = () => {
 	}
 return (
 	<>
-	<Nav style={{backgroundColor:" rgb(0,0,0)",backgroundColor:" rgba(0,0,0, 0.2)" , color:"black"}} >
+	<Nav style={{backgroundColor:" rgb(0,0,0)", color:"black"}} >
 		<Bars />
 
 		<NavMenu>
