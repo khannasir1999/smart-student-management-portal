@@ -9,7 +9,7 @@ const CardShowTeacher = (props) => {
           <th>Teacher's Name</th>
           <th>Email</th>
           <th>Phone Number</th>
-          <th className="td-btn">
+          <th className="th-btn">
             <ModelAddTeacher
               getTeacher={props.getTeacher}
               setRegisterName={props.setRegisterName}
@@ -45,7 +45,7 @@ const CardShowTeacher = (props) => {
               <td>{items.email}</td>
               <td>{items.phone_no}</td>
               <td className="td-btn">
-                <button
+                <button className="td-btn"
                   onClick={() => {
                     props.setTitle("edit");
                     props.setIsSignupVisible(true);
@@ -56,8 +56,8 @@ const CardShowTeacher = (props) => {
                   }}
                 >
                   Edit
-                </button>
-                <button onClick={() => props.delTeacher(items.id)}>
+                </button >
+                <button className="td-btn" onClick={() => props.delTeacher(items.id)}>
                   Delete
                 </button>
               </td>

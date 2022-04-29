@@ -7,32 +7,21 @@ import swal from "sweetalert";
 const ModelAddTeacher = (props) => {
   // code of model visibility..........................................
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (props.title === "create") {
-      registerUser()
+      registerUser();
     } else {
-      props.editTeacher()
+      props.editTeacher();
     }
-  }
+  };
 
   const showModal = () => {
     props.setIsSignupVisible(true);
-    props.setTitle("create")
+    props.setTitle("create");
   };
   const handleCancel = () => {
     props.setIsSignupVisible(false);
   };
-
-
-  // code for post register data.........................................
-
-  // states for registration user.........
-  // const [registerName, setRegisterName] = useState("");
-  // const [registerEmail, setRegisterEmail] = useState("");
-  // const [registerPhone_no, setRegisterPhone_no] = useState("");
-  // const [registerPassword, setRegisterPassword] = useState("");
-  // const [registerPassword_confirmation, setRegisterPassword_confirmation] =
-  //   useState("");
 
   //code for error handaling............
   const [errName, setErrName] = useState("");
@@ -63,7 +52,6 @@ const ModelAddTeacher = (props) => {
 
   // fucntion for registration of data...
   const registerUser = async () => {
-
     try {
       const res = await axios.post("http://localhost:8000/api/teachers", {
         name: props.registerName,
@@ -72,7 +60,7 @@ const ModelAddTeacher = (props) => {
         password: props.registerPassword,
         password_confirmation: props.registerPassword_confirmation,
       });
-      props.getTeacher()
+      props.getTeacher();
       console.log(res);
       props.setIsSignupVisible(false);
       swal({
@@ -81,7 +69,6 @@ const ModelAddTeacher = (props) => {
         title: "Teacher Added",
         timer: 1500,
       });
-
     } catch (error) {
       setErrName(error.response.data.errors.name);
       setErrEmail(error.response.data.errors.email);
@@ -92,7 +79,7 @@ const ModelAddTeacher = (props) => {
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
+      <Button style={{ width: "80%" }} type="primary" onClick={showModal}>
         + Add
       </Button>
       <Modal
@@ -130,29 +117,38 @@ const ModelAddTeacher = (props) => {
             value={props.registerPhone_no}
             onChange={(e) => props.setRegisterPhone_no(e.target.value)}
           />
-          <div className="form-err">{errPassword}</div>
-          <input
-            type="password"
-            name="password"
-            placeholder=" Enter Password"
-            className="form-input"
-            value={props.registerPassword}
-            onChange={(e) => props.setRegisterPassword(e.target.value)}
-          />
-          <div className="form-err">{errPassword}</div>
-          <input
-            type="password"
-            name="confirm-password"
-            placeholder=" Confirm Password"
-            className="form-input"
-            value={props.registerPassword_confirmation}
-            onChange={(e) => props.setRegisterPassword_confirmation(e.target.value)}
-          />
+
+          {props.title === "create" ? (
+            <div>
+              <div className="form-err">{errPassword}</div>
+              <input
+                type="password"
+                name="password"
+                placeholder=" Enter Password"
+                className="form-input"
+                value={props.registerPassword}
+                onChange={(e) => props.setRegisterPassword(e.target.value)}
+              />
+              <div className="form-err">{errPassword}</div>
+              <input
+                type="password"
+                name="confirm-password"
+                placeholder=" Confirm Password"
+                className="form-input"
+                value={props.registerPassword_confirmation}
+                onChange={(e) =>
+                  props.setRegisterPassword_confirmation(e.target.value)
+                }
+              />{" "}
+            </div>
+          ) : (
+            ""
+          )}
+
           <button type="submit" className="form-btn">
             Add
           </button>
         </form>
-
       </Modal>
     </>
   );
