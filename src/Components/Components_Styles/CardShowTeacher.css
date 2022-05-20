@@ -1,49 +1,44 @@
-
 table {
-    width: 100%;
-  }
-  
-  thead,
-  tbody {
-    text-align: left;
-    font-size: 15px;
-    font-weight:200px;
-   
-  }
-  tr {
-    margin: 200px;
-    box-shadow: 5px 10px #888888;
-    
-  }
-  .th-btn{
-    text-align: center;
-    width: 150px;
-   
-  }
-  .td-btn{
-    text-align: center;
-    width: 110px;
-    margin-top: 5px;
-    font-size: 10px;
-  }
-  .td-btn:hover{
-    margin-right: 5px;
-    color: rgb(110, 4, 4);
-    font-weight: bold;
-  }
-  .td-id{
-      font-weight: bold;
-  }
-  
-  thead,
-  th {
-    background-color: rgb(22, 20, 20);
-    color: white;
-    font-size: larger;
-    border: 3px solid #c4c3c3c7;
-    padding: 5px;
-  }
-  tbody td{
-    padding: 10px;
-  }
-  
+  width: 100%;
+}
+
+thead,
+tbody {
+  text-align: left;
+  font-size: 15px;
+  font-weight: 200px;
+}
+tr {
+  margin: 200px;
+  box-shadow: 5px 10px #888888;
+}
+.th-btn {
+  text-align: center;
+  width: 150px;
+}
+.td-btn {
+  text-align: center;
+  width: 110px;
+  margin-top: 5px;
+  font-size: 10px;
+}
+.td-btn:hover {
+  margin-right: 5px;
+  color: rgb(110, 4, 4);
+  font-weight: bold;
+}
+.td-id {
+  font-weight: bold;
+}
+
+thead,
+th {
+  background-color: rgb(22, 20, 20);
+  color: white;
+  font-size: larger;
+  border: 3px solid #c4c3c3c7;
+  padding: 5px;
+}
+tbody td {
+  padding: 10px;
+}
