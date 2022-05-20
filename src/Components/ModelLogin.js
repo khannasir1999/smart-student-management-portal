@@ -38,42 +38,11 @@ const ModelLogin = (props) => {
     }
   }, [inputPassword])
 
-  //Login as an admin
-  const loginSubmit = async (e) => {
+  const login = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:8000/api/admin_login", {
-        email: inputEmail,
-        password: inputPassword,
-
-      });
-      if (res.status === 200) {
-        localStorage.setItem("auth_user", res.data.user);
-        localStorage.setItem("auth_token", res.data.token);
-        swal({
-          position: 'center',
-          icon: 'success',
-          title: 'Successfully Loged in',
-          timer: 1500
-        })
-        props.setIsLoginVisible(false);
-        navigate("/dashboard");
-      }
-    } catch (error) {
-      setInputError("invalid credentials");
-    }
-  };
-
-
-
-  //login as teacher
-
-  const loginteacher = async (e) => {
-    e.preventDefault();
-
-    try {
-      const res = await axios.post("http://localhost:8000/api/teacher_login", {
+      const res = await axios.post("http://localhost:8000/api/login", {
         email: inputEmail,
         password: inputPassword,
 
@@ -126,11 +95,8 @@ const ModelLogin = (props) => {
           />
           <div style={{ color: "red", margin: "10px" }}>{inputError}</div>
 
-          <button className="form-btn" type="submit" onClick={loginSubmit}>
-            Login as an admin
-          </button>
-          <button className="form-btn" type="submit" onClick={loginteacher}>
-            Login as a teacher
+          <button className="form-btn" type="submit" onClick={login}>
+            Login
           </button>
         </form>
         <div className="form">
