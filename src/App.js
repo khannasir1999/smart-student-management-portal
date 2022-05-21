@@ -8,13 +8,14 @@ import Profile from './Pages/Profile'
 import NavBar from "./Components/NavBar";
 import FrontScreen from "./Pages/FrontScreen";
 import axios from "axios";
-import TeacherDashboard from "./Pages/TeacherDashboard";
-import TeacherNavbar from "./Components/TeacherNavbar";
-import MarkAttendanceTeacher from "./Pages/MarkAttendanceTeacher";
+import { useState } from "react";
+
+
 
 
 
 function App() {
+  const [isSignupVisible, setIsSignupVisible] = useState(false);
 
   axios.interceptors.request.use(function(config){
     const token = localStorage.getItem('auth_token');
@@ -23,25 +24,22 @@ function App() {
   })
   return (
     <>
-    
     <BrowserRouter>
       <Routes>
       {/* routes of mainpage */}
         <Route path="/" index element={<FrontScreen/>} />
        {/* routes of navbar */}
-        <Route path="/" element={<NavBar/>} >
+        <Route path="/" element={<NavBar isSignupVisible={isSignupVisible}
+              setIsSignupVisible={setIsSignupVisible}/>} >
           <Route path="dashboard" element={<Dashboard/>}/> 
           <Route path="teacher" element={<Teacher/>}/>
           <Route path="registration_card" element={<RegisterationCard/>} />
           <Route path="fees" element={<Fees/>} />
           <Route path="profile" element={<Profile/>} />
         </Route>
-        {/* routes for teacher */}
-        <Route path="/" element = {<TeacherNavbar/>}>
-          <Route path="TeacherDashboard"element ={<TeacherDashboard/>}/>
-          <Route path="MarkAttendanceTeacher" element={<MarkAttendanceTeacher/>}/>
+      
 
-        </Route>
+    
     
       </Routes>
     </BrowserRouter>

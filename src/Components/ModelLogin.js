@@ -48,21 +48,23 @@ const ModelLogin = (props) => {
 
       });
       if (res.status === 200) {
-        localStorage.setItem("auth_user", res.data.user);
         localStorage.setItem("auth_token", res.data.token);
+        localStorage.setItem("role_name", res.data.user.role_name);
+
         swal({
           position: 'center',
           icon: 'success',
           title: 'Successfully Loged in',
-          timer: 1500
+          timer: 1000
         })
         props.setIsLoginVisible(false);
-        navigate("/TeacherDashboard");
+        navigate("/Dashboard");
       }
     } catch (error) {
       setInputError("invalid credentials");
     }
   };
+  
 
   return (
     <>
