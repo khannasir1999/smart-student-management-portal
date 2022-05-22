@@ -12,7 +12,7 @@ const FrontScreen = () => {
     <div className="over-lay">
       <div className="nav-bar">
         <div className="heading">
-          <h1 className="heading-text">Stanford University</h1>
+          <h1 className="heading-text">COMSATS UNIVERSITY</h1>
         </div>
         <ul>
           <li>
@@ -22,13 +22,6 @@ const FrontScreen = () => {
               isSignupVisible={isSignupVisible}
               setIsSignupVisible={setIsSignupVisible}
             />
-          </li>
-          <li>
-            <ModelSignup  
-              isLoginVisible={isLoginVisible}
-              setIsLoginVisible={setIsLoginVisible}
-              isSignupVisible={isSignupVisible}
-              setIsSignupVisible={setIsSignupVisible} />
           </li>
         </ul>
       </div>
