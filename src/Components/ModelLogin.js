@@ -48,6 +48,7 @@ const ModelLogin = (props) => {
 
       });
       if (res.status === 200) {
+        
         localStorage.setItem("auth_token", res.data.token);
         localStorage.setItem("role_name", res.data.user.role_name);
 
