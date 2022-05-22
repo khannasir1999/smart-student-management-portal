@@ -15,12 +15,7 @@ import Manage_students from "./Pages/Manage_students";
 import axios from "axios";
 import { useState } from "react";
 
-
-
-
-
 function App() {
-  const [isSignupVisible, setIsSignupVisible] = useState(false);
 
   axios.interceptors.request.use(function(config){
     const token = localStorage.getItem('auth_token');
@@ -34,8 +29,7 @@ function App() {
       {/* routes of mainpage */}
         <Route path="/" index element={<FrontScreen/>} />
        {/* routes of navbar */}
-        <Route path="/" element={<NavBar isSignupVisible={isSignupVisible}
-              setIsSignupVisible={setIsSignupVisible}/>} >
+        <Route path="/" element={<NavBar/>} >
           <Route path="dashboard" element={<Dashboard/>}/> 
           <Route path="teacher" element={<Teacher/>}/>
           <Route path="registration_card" element={<RegisterationCard/>} />
@@ -50,9 +44,6 @@ function App() {
           
           
         </Route>
-      
-
-    
     
       </Routes>
     </BrowserRouter>

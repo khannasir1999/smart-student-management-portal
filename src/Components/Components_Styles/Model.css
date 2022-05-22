@@ -6,13 +6,19 @@
 }
 .form-input{
     margin: 10px;
-    width: 250px;
+    width: 330px;
     height: 35px;
     border: 2px solid rgb(41, 38, 38);
     border-radius: 10px;
 }
+.form-label{
+    /* border: 2px solid rgb(41, 38, 38); */
+    padding: 5px;
+    font-weight: bolder;
+    
+}
 .form-btn{
-    margin: 5px;
+    margin: 10px;
     width: 200px;
     height: 30px;
     border: 2px solid black;
@@ -45,5 +51,14 @@
 }
 .TeacherNavbar{
 background-color: darkgrey;
+}
+.img{
+    margin: 10px;
+    margin-left: 5px;
+    width: 200px;
+    height: 28px;
+    
+    background-color: bisque;
+  
 }
 

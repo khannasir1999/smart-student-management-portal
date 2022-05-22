@@ -8,6 +8,7 @@ import { useState } from "react";
 import ModelSignup from "./ModelSignup";
 
 const NavBar = (props) => {
+  const [isSignupVisible, setIsSignupVisible] = useState(false);
 
   const navItems = localStorage.getItem("role_name");
 
@@ -46,13 +47,8 @@ const NavBar = (props) => {
             <NavLink to="/teacher">Add Teacher</NavLink>
             <NavLink to="/registration_card">Registeration Card</NavLink>
             <NavLink to="/fees">Fees</NavLink>
-            <div style={{
-				backgroundColor: " rgba(0,0,0,0.0)",
-				color: "gray",
-				border: "1px  rgba(0,0,0,0.0)",
-			}}><ModelSignup/></div>
-
-			
+            <div><ModelSignup isSignupVisible={isSignupVisible}
+              setIsSignupVisible={setIsSignupVisible}/></div>
           </NavMenu>
         ) : (
           <NavMenu>
