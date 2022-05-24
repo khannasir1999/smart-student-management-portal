@@ -2,7 +2,7 @@ import "./App.css";
 import Dashboard from "./Pages/Dashboard";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Teacher from './Pages/Teacher'
-import RegisterationCard from './Pages/RegisterationCard'
+import RegisterationCard from './Pages/Departments'
 import Fees from './Pages/Fees'
 import Profile from './Pages/Profile'
 import NavBar from "./Components/NavBar";
@@ -14,8 +14,9 @@ import Manage_students from "./Pages/Manage_students";
 
 import axios from "axios";
 import { useState } from "react";
+import Departments from "./Pages/Departments";
 
-function App() {
+function App({text}) {
 
   axios.interceptors.request.use(function(config){
     const token = localStorage.getItem('auth_token');
@@ -32,12 +33,12 @@ function App() {
         <Route path="/" element={<NavBar/>} >
           <Route path="dashboard" element={<Dashboard/>}/> 
           <Route path="teacher" element={<Teacher/>}/>
-          <Route path="registration_card" element={<RegisterationCard/>} />
+          <Route path="departments" element={<Departments/>} />
           <Route path="fees" element={<Fees/>} />
           <Route path="profile" element={<Profile/>} />
           <Route path="teacher_dashboard" element={<Teacher_dashboard/>} />
           <Route path="edit_teacher_profile" element={<Edit_teacher_profile/>} />
-          <Route path="manage_attendance" element={<Manage_attendance/>} />
+          <Route path="manage_attendance" element={<Manage_attendance text={text}/>} />
           <Route path="manage_students" element={<Manage_students/>} />
           
 

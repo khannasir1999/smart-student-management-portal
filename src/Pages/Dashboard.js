@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import "./Dashboard.css";
 import { useState, useEffect } from "react";
 import CardShowTeacher from "../Components/CardShowTeacher";
 
@@ -56,7 +55,7 @@ const Dashboard = () => {
     setIsSignupVisible(false)
     getTeacher()
   }
- const baseUrl2 = "http://127.0.0.1:8000/api/users/teacher_count"
+ const baseUrl2 = "http://127.0.0.1:8000/api/teacher_count"
 
  const count_teacher = async () => {
    const res = await axios.get(baseUrl2);
@@ -84,6 +83,7 @@ const Dashboard = () => {
             setRegisterPassword_confirmation={setRegisterPassword_confirmation}
             registerPassword_confirmation={registerPassword_confirmation}
             setTitle={setTitle}
+          
             title={title}
             setPutId={setPutId}
             isSignupVisible={isSignupVisible}
@@ -91,10 +91,13 @@ const Dashboard = () => {
           />
         </div>
 
-   <button onClick={count_teacher}>
-     Show number of teachers
+   <h1>
+     number of teachers:
+     {count}
+     </h1>
      
-   </button>
+   
+  
   
   
    

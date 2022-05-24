@@ -44,8 +44,8 @@ const NavBar = (props) => {
         {navItems === "admin" ? (
           <NavMenu>
             <NavLink to="/dashboard">Admin Dashboard</NavLink>
-            <NavLink to="/teacher">Add Teacher</NavLink>
-            <NavLink to="/registration_card">Registeration Card</NavLink>
+            
+            <NavLink to="/departments">Departments</NavLink>
             <NavLink to="/fees">Fees</NavLink>
             <div><ModelSignup isSignupVisible={isSignupVisible}
               setIsSignupVisible={setIsSignupVisible}/></div>

@@ -1,9 +1,35 @@
-const Manage_attendance = () => {
+import React from "react";
+import QRCode from 'qrcode';
+import { useState} from "react";
+import "./Pages_Styles/Styles.css"
+
+const Manage_attendance = ({text}) => {
+    const [src , setSrc] = useState('');
+     
+  
+    const Qrgenerate = () => {
+        
+            QRCode.toDataURL(text).then((data) => {
+            setSrc(data)
+            
+
+    
+            }).catch(function(){
+                console.log("Error");
+            })
+            
+          
+          
+    }
+
     return (
         <>
-        <h1>
-            manage attendace
-        </h1>
+
+    <button onClick= {Qrgenerate} className = "btn">
+        Generate QR
+    </button>
+    
+    <img className="QR_image"  src = {src}/>
         </>
     )
 }

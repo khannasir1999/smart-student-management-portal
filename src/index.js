@@ -4,9 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App
+     text = {JSON.stringify({
+              id: 1,
+              name: 'nasir',
+              insider: true,
+              Date: new Date().toLocaleString()
+              
+            
+            })}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
