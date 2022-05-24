@@ -15,9 +15,7 @@ const Dashboard = () => {
        <ShowTeacher/>
        <ShowAdmin/>
        <ShowStudent/>
+</>
+ )}
 
-
-        </>
-    );
-}
-export default Dashboard;
+export default  Dashboard;

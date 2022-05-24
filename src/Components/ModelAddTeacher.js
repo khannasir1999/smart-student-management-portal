@@ -53,7 +53,7 @@ const ModelAddTeacher = (props) => {
   // fucntion for registration of data...
   const registerUser = async () => {
     try {
-      const res = await axios.post("http://localhost:8000/api/teachers", {
+      const res = await axios.post("http://127.0.0.1:8000/api/users/teacher", {
         name: props.registerName,
         email: props.registerEmail,
         phone_no: props.registerPhone_no,

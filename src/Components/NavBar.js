@@ -12,6 +12,8 @@ const NavBar = (props) => {
 
   const navItems = localStorage.getItem("role_name");
 
+
+
   const navigate = useNavigate();
 
   const btnLogout = async (e) => {
@@ -42,19 +44,19 @@ const NavBar = (props) => {
         {navItems === "admin" ? (
           <NavMenu>
             <NavLink to="/dashboard">Admin Dashboard</NavLink>
-            <NavLink to="/teacher">Add Teacher</NavLink>
-            <NavLink to="/registration_card">Registeration Card</NavLink>
+            
+            <NavLink to="/departments">Departments</NavLink>
             <NavLink to="/fees">Fees</NavLink>
             <div><ModelSignup isSignupVisible={isSignupVisible}
               setIsSignupVisible={setIsSignupVisible}/></div>
           </NavMenu>
         ) : (
           <NavMenu>
-            <NavLink to="/dashboard">Teacher Dashboard</NavLink>
-            <NavLink to="/teacher">Student Marks</NavLink>
-            <NavLink to="/registration_card">TimeTable</NavLink>
-            <NavLink to="/fees">Attendance</NavLink>
-            <NavLink to="/profile">Profile</NavLink>
+            <NavLink to="/teacher_dashboard">Teacher Dashboard</NavLink>
+            <NavLink to="/edit_teacher_profile">Edit Profile</NavLink>
+            <NavLink to="/manage_attendance">Manage Attendance</NavLink>
+            <NavLink to="/manage_students">Manage Students</NavLink>
+        
           </NavMenu>
         )}
 
