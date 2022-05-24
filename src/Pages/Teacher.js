@@ -14,7 +14,7 @@ const Teacher = () => {
   const [title, setTitle] = useState("")
   //  code for get Teachers data ....................
   const [teacherData, setTeacherData] = useState([])
-  const baseUrl = "http://localhost:8000/api/teachers/"
+  const baseUrl = "http://localhost:8000/api/users/admin"
 
   useEffect(() => {
     getTeacher()
@@ -48,7 +48,7 @@ const Teacher = () => {
   }
   return (
     <>
-      <div style={{ margin: "10px" }}>
+      {/* <div style={{ margin: "10px" }}>
         <CardShowTeacher
           teacherData={teacherData}
           getTeacher={getTeacher}
@@ -71,7 +71,7 @@ const Teacher = () => {
           isSignupVisible={isSignupVisible}
           setIsSignupVisible={setIsSignupVisible}
         />
-      </div>
+      </div> */}
 
     </>
   );

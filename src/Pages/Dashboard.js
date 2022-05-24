@@ -1,9 +1,20 @@
+import axios from "axios";
 import "./Dashboard.css";
+import ShowTeacher from "./ShowTeacher";
+import ShowAdmin from "./ShowAdmin";
+import ShowStudent from "./ShowStudent";
 const Dashboard = () => {
+
+    const showTeacherHandler = async() => {
+        const res = await axios.post("http://localhost:8000/api/user/teacher")
+       
+    }
     
     return (
-        <>
-        <h1>Nasir kam kar lo yahan thora "Walay!"</h1>
+       <>
+       <ShowTeacher/>
+       <ShowAdmin/>
+       <ShowStudent/>
 
 
         </>
