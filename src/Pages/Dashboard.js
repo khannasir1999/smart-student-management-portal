@@ -1,5 +1,4 @@
 import axios from "axios";
-import "./Dashboard.css";
 import ShowTeacher from "./ShowTeacher";
 import ShowAdmin from "./ShowAdmin";
 import ShowStudent from "./ShowStudent";

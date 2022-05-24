@@ -1,7 +1,7 @@
 
-import React from 'react'
+// import React from 'react'
 
-Departments = () => {
-
-}
-export default Departments;
+// Departments = () => {
+// retur
+// }
+// export default Departments;
