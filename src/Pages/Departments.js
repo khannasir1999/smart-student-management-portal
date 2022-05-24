@@ -1,7 +1,9 @@
 
 import React from 'react'
 
-Departments = () => {
-
+const Departments = () => {
+  return (
+<p>ssssssssssss</p>
+  );
 }
 export default Departments;
