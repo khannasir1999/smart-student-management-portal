@@ -105,9 +105,9 @@ const ModelLogin = (props) => {
           </button>
         </form>
         <div className="form">
-          Don't have account?
+         
           <button className="switch-btn" onClick={handleModol}>
-            Create Account
+          Forget Password ?
           </button>
         </div>
       </Modal>
