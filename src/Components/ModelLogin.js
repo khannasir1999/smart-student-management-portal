@@ -51,6 +51,8 @@ const ModelLogin = (props) => {
         
         localStorage.setItem("auth_token", res.data.token);
         localStorage.setItem("role_name", res.data.user.role_name);
+  
+        console.log(res.data.user.first_name)
 
         swal({
           position: 'center',
@@ -103,9 +105,9 @@ const ModelLogin = (props) => {
           </button>
         </form>
         <div className="form">
-          Don't have account?
+         
           <button className="switch-btn" onClick={handleModol}>
-            Create Account
+          Forget Password ?
           </button>
         </div>
       </Modal>
