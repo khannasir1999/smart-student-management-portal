@@ -1,5 +1,4 @@
 import "./Pages_Styles/FrontScreen.css";
-import ModelSignup from "../Components/ModelSignup";
 import ModelLogin from "../Components/ModelLogin";
 import { useState } from "react";
 

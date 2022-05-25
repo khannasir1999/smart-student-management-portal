@@ -2,23 +2,29 @@ import React, { useState } from 'react';
 import { MDBDataTableV5 } from 'mdbreact';
 import { useEffect } from 'react';
 import axios from 'axios';
+import "../Components/Components_Styles/Margin_pages.css"
 
-export default function ShowAdmin() {
+
+
+export default function ShowTeacher() {
     
 const [teacherData, setTeacherData]= useState([])
 
     useEffect(() => {
-      getAdmin();
+      getTeacher();
     }, [])
     
 
-    const getAdmin = async () => {
+    const getTeacher = async () => {
         const res = await axios.get("http://localhost:8000/api/users/admin");
         console.log(res);
         setTeacherData(res.data)
       }
       
-  return <MDBDataTableV5 hover entriesOptions={[5, 20, 25]} entries={5} pagesAmount={4} data={{
+  return <div className='margin-all'> <MDBDataTableV5 hover entriesOptions={[5, 20, 25]} entries={5} pagesAmount={4} data={
+    
+    
+    {
     columns: [
         {
           label: 'Name',
@@ -56,21 +62,30 @@ const [teacherData, setTeacherData]= useState([])
           field: 'email',
           sort: 'disabled',
           width: 100,
+        },
+        {
+          label: 'Picture',
+          field: 'picture',
+          sort: 'disabled',
+          width: 100,
         }
+        
         ],
       rows: teacherData.map((items)=>{
                return(
                    {
-                       name:  items.first_name + " " + items.last_name ,
+                       name: items.first_name ,
                        father_name : items.father_name,
                        gender : items.gender,
                        age : items.age,
                        phone_no : items.phone_no,
-                       email : items.email
+                       email : items.email,
+                       picture : <img src={"http://localhost:8000/storage/media/" + items.picture } alt=" user Picture" className='data-img' />
    
                    }
                )
            })
 
-  }} searchTop searchBottom={false} />;
+  }} searchTop searchBottom={false} />
+  </div>;
 }

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { MDBDataTableV5 } from "mdbreact";
+import "../Components/Components_Styles/Margin_pages.css"
 import axios from "axios";
 //import { Button } from "antd";
 import ModelAddDepartment from "../Components/ModelAddDepartment";
 import { Button } from "antd";
+
 
 const Departments = () => {
   //states of post data....................................
@@ -37,7 +39,7 @@ const Departments = () => {
   };
 
   return (
-    <MDBDataTableV5
+   <div className="margin-all"> <MDBDataTableV5
       hover
       entriesOptions={[5, 20, 25]}
       entries={5}
@@ -83,7 +85,7 @@ const Departments = () => {
       }}
       searchTop
       searchBottom={false}
-    />
+    /> </div>
   );
 };
 

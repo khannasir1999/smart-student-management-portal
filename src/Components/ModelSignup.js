@@ -147,9 +147,12 @@ const ModelSignup = (props) => {
           backgroundColor: " rgba(0,0,0,0.0)",
           color: "gray",
           border: "0px  rgba(0,0,0,0.0)",
+          fontSize: "16px",
+          marginLeft: "0",
+          paddingLeft: "0"
         }}
       >
-        Add New
+        Add New 
       </Button>
       <Modal
         title="Add New"

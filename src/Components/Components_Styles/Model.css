@@ -41,12 +41,13 @@
 }
 .logout-btn{
    border: 1px  ;
-   padding: 10px;
-   height: 50%;
-   margin-top: 20px;
-   background-color: #1890ff;
+   padding: 5px;
+   height: 40px;
+   width: 100px;
+   background-color: #ff1818;
     color: white;
     cursor: pointer;
+    border-radius: 5px;
       
 }
 .TeacherNavbar{
