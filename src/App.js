@@ -11,10 +11,13 @@ import Teacher_dashboard from "./Pages/Teacher_dashboard";
 import Edit_teacher_profile from "./Pages/Edit_teacher_profile";
 import Manage_attendance from "./Pages/Manage_attendance";
 import Manage_students from "./Pages/Manage_students";
-
+import ShowAdmin from "./Pages/ShowAdmin";
+import ShowStudent from "./Pages/ShowStudent";
+import ShowTeacher from "./Pages/ShowTeacher";
+import "./Components/Components_Styles/Margin_pages.css"
 import axios from "axios";
-import { useState } from "react";
 import Departments from "./Pages/Departments";
+import TermAndCondition from "./Pages/TermAndCondition";
 
 function App({text}) {
 
@@ -40,6 +43,11 @@ function App({text}) {
           <Route path="edit_teacher_profile" element={<Edit_teacher_profile/>} />
           <Route path="manage_attendance" element={<Manage_attendance text={text}/>} />
           <Route path="manage_students" element={<Manage_students/>} />
+          <Route path="/list/teachers" element={<ShowTeacher/>} />
+          <Route path="/list/students" element={<ShowStudent/>} />
+          <Route path="/list/admin" element={<ShowAdmin classname="right-margin" />} />
+          <Route path="term_and_condition" element={<TermAndCondition/>} />
+
           
 
           

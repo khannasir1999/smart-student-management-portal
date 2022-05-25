@@ -1,7 +1,10 @@
+import React from 'react'
+import "../Components/Components_Styles/Margin_pages.css"
 
-// import React from 'react'
+const Departments = () => {
+return(
+    <h1 className='margin-all'>departments</h1>
 
-// Departments = () => {
-// retur
-// }
-// export default Departments;
+)
+}
+export default Departments;

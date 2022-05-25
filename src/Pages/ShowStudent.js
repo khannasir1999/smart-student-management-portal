@@ -18,7 +18,7 @@ const [teacherData, setTeacherData]= useState([])
         setTeacherData(res.data)
       }
       
-  return <MDBDataTableV5 hover entriesOptions={[5, 20, 25]} entries={5} pagesAmount={4} data={{
+  return  <div className='margin-all'> <MDBDataTableV5 hover entriesOptions={[5, 20, 25]} entries={5} pagesAmount={4} data={{
     columns: [
         {
           label: 'Name',
@@ -56,6 +56,12 @@ const [teacherData, setTeacherData]= useState([])
           field: 'email',
           sort: 'disabled',
           width: 100,
+        },
+        {
+          label: 'Picture',
+          field: 'picture',
+          sort: 'disabled',
+          width: 100,
         }
         ],
       rows: teacherData.map((items)=>{
@@ -66,11 +72,12 @@ const [teacherData, setTeacherData]= useState([])
                        gender : items.gender,
                        age : items.age,
                        phone_no : items.phone_no,
-                       email : items.email
+                       email : items.email,
+                       picture : <img src={"http://localhost:8000/storage/media/" + items.picture } alt=" user Picture" className='data-img'/>
    
                    }
                )
            })
 
-  }} searchTop searchBottom={false} />;
+  }} searchTop searchBottom={false} /> </div>;
 }

@@ -1,8 +1,10 @@
+import "../Components/Components_Styles/Margin_pages.css"
+
 const teacher_profile = () => {
     return (
         <>
-        <h1>
-            teacher profile
+        <h1 className="margin-all">
+            Teacher profile
         </h1>
         </>
     )
