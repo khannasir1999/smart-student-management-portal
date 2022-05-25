@@ -145,14 +145,59 @@ const NavBar = (props) => {
         </>
       ) : navItems === "Teacher" ? (
         <>
+
+<div className="horizontal-navbar">
+            <ul>
+              {/* <li>Picture</li> */}
+              <li>
+                
+                <NavDropdown
+                  title="Nasir Hussain Khan"
+                  menuVariant="light"
+                  id="nav-dropdown-dark-example"
+                  style={{
+                    color: "black",
+                  }}
+                >
+                  <NavDropdown.Item href="#action/3.1">
+                    {" "}
+                    <FcPortraitMode /> Profile
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.2">
+                    {" "}
+                    <FcServices /> Setting
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.3"></NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item>
+                    <button
+                      onClick={btnLogout}
+                      className="logout-btn"
+                      type="submit"
+                    >
+                      Logout
+                    </button>
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </li>
+            </ul>
+          </div>
+
+
+
+
+
+
+
+
           <ProSidebar className="nav001">
-            <Menu iconShape="square">
+           
               <SidebarHeader className="nav-header">
                 Teacher Portal
               </SidebarHeader>
-            </Menu>
+      
+            <SidebarContent>
             <Menu>
-
               <MenuItem icon={<FaGem />}>
                 <Link to="/dashboard">Dashboard</Link>
               </MenuItem>
@@ -166,6 +211,13 @@ const NavBar = (props) => {
                 <Link to="/edit_teacher_profile">Profile</Link>
               </MenuItem>
             </Menu>
+              </SidebarContent>
+
+              <SidebarFooter>
+            <Menu>
+             <MenuItem icon={<FcDiploma2/>} > <Link to="/term_and_condition">Terms and Conditions </Link> </MenuItem> 
+            </Menu>
+            </SidebarFooter>
           </ProSidebar>
         </>
       ) : (
