@@ -1,0 +1,34 @@
+.mainContainer{
+    margin: 20px;
+}
+
+.mainHeading{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 40px;
+
+}
+.img-size{
+    height: 150px;
+    width: 130px;
+}
+.profile-img{
+    float: right;
+    margin-right: 200px;
+   
+    
+}
+.data{
+    font-weight: 200px;
+    font-size: 17px;
+    margin-top: 12px;
+    margin-left: 10px;
+    
+}
+.inline{
+    display: flex;
+  flex-direction: row;
+  font-size: 30px;
+ 
+
+}

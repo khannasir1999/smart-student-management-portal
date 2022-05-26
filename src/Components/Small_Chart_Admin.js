@@ -12,6 +12,7 @@ import {
 } from "reactstrap";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const A_Cards = () => {
     useEffect(() => {
@@ -20,7 +21,7 @@ const A_Cards = () => {
 
     const [number, setNumber] = useState("");
     const getData = async () => {
-        const res = await axios.get("http://localhost:8000/api/teacher_count")
+        const res = await axios.get("http://localhost:8000/api/admin_count")
         console.log(res.data)
         setNumber(res.data)
     }
@@ -29,6 +30,7 @@ const A_Cards = () => {
 
     return (
         <>
+        <Link to="/list/admin">
             <div style={{ width: "18rem" }}>
                 <Card className="card-stats mb-4 mb-lg-0">
                     <CardBody>
@@ -55,7 +57,8 @@ const A_Cards = () => {
                     </CardBody>
                 </Card>
             </div>
-        </>
+       </Link> 
+       </>
     );
 
 

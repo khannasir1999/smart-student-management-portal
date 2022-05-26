@@ -53,12 +53,12 @@ const ModelLogin = (props) => {
         localStorage.setItem("role_name", res.data.user.role_name);
          localStorage.setItem("first_name",res.data.user.first_name);
          localStorage.setItem("last_name",res.data.user.last_name);
-         localStorage.setItem("last_name",res.data.user.last_name);
+         localStorage.setItem("email",res.data.user.email);
          localStorage.setItem("profile_pic",res.data.user.picture);
-
-
-      
-        
+         localStorage.setItem("phone_no",res.data.user.phone_no);
+         localStorage.setItem("age",res.data.user.age);
+         localStorage.setItem("gender",res.data.user.gender);
+         localStorage.setItem("father_name",res.data.user.father_name);
         swal({
           position: 'center',
           icon: 'success',
