@@ -4,22 +4,25 @@ import { useEffect } from 'react';
 import axios from 'axios';
 
 export default function ShowStudent() {
-    
-const [teacherData, setTeacherData]= useState([])
 
-    useEffect(() => {
-      getStudent();
-    }, [])
-    
+  const [teacherData, setTeacherData] = useState([])
 
-    const getStudent = async () => {
-        const res = await axios.get("http://localhost:8000/api/users/student");
-        console.log(res);
-        setTeacherData(res.data)
-      }
-      
-  return  <div className='margin-all'> <MDBDataTableV5 hover entriesOptions={[5, 20, 25]} entries={5} pagesAmount={4} data={{
-    columns: [
+  useEffect(() => {
+    getStudent();
+  }, [])
+
+
+  const getStudent = async () => {
+    const res = await axios.get("http://localhost:8000/api/users/student");
+    console.log(res);
+    setTeacherData(res.data)
+  }
+
+  return <div className='margin-all'>
+    <div style={{ textAlign: "center", marginBottom: "10px" }} ><h2 style={{ fontWeight: "bold" }}>Student's Data</h2></div>
+
+    <MDBDataTableV5 hover entriesOptions={[5, 20, 25]} entries={5} pagesAmount={4} data={{
+      columns: [
         {
           label: 'Name',
           field: 'name',
@@ -63,21 +66,21 @@ const [teacherData, setTeacherData]= useState([])
           sort: 'disabled',
           width: 100,
         }
-        ],
-      rows: teacherData.map((items)=>{
-               return(
-                   {
-                       name:  items.first_name + " " + items.last_name ,
-                       father_name : items.father_name,
-                       gender : items.gender,
-                       age : items.age,
-                       phone_no : items.phone_no,
-                       email : items.email,
-                       picture : <img src={"http://localhost:8000/storage/media/" + items.picture } alt=" user Picture" className='data-img'/>
-   
-                   }
-               )
-           })
+      ],
+      rows: teacherData.map((items) => {
+        return (
+          {
+            name: items.first_name + " " + items.last_name,
+            father_name: items.father_name,
+            gender: items.gender,
+            age: items.age,
+            phone_no: items.phone_no,
+            email: items.email,
+            picture: <img src={"http://localhost:8000/storage/media/" + items.picture} alt=" user Picture" className='data-img' />
 
-  }} searchTop searchBottom={false} /> </div>;
+          }
+        )
+      })
+
+    }} searchTop searchBottom={false} /> </div>;
 }

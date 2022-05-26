@@ -40,9 +40,9 @@
   margin-right: 15px;
 }
 .heading {
-  margin: 10px 30px;
+  margin: 17px 30px;
   font-size: 18px;
-  font-weight: bolder;
+  font-weight: bold;
   display: inline;
   float: left;
 
@@ -59,8 +59,9 @@
 
 .heading-text{
   color: rgb(211, 197, 197);
-  text-shadow:7px 7px  #352424 ;
-   
+  text-shadow:9px 9px  #352424 ;
+  font-size: 35px;
+  font-weight: bold
 }
 .overlay {
   margin-top: 335px;

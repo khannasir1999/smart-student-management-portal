@@ -51,9 +51,14 @@ const ModelLogin = (props) => {
         
         localStorage.setItem("auth_token", res.data.token);
         localStorage.setItem("role_name", res.data.user.role_name);
-  
-        console.log(res.data.user.first_name)
+         localStorage.setItem("first_name",res.data.user.first_name);
+         localStorage.setItem("last_name",res.data.user.last_name);
+         localStorage.setItem("last_name",res.data.user.last_name);
+         localStorage.setItem("profile_pic",res.data.user.picture);
 
+
+      
+        
         swal({
           position: 'center',
           icon: 'success',

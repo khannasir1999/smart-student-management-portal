@@ -62,4 +62,14 @@ background-color: darkgrey;
     background-color: bisque;
   
 }
-
+.td-btn {
+    text-align: center;
+    width: 110px;
+    margin-top: 5px;
+    font-size: 10px;
+  }
+  .td-btn:hover {
+    margin-right: 5px;
+    color: rgb(110, 4, 4);
+    font-weight: bold;
+  }

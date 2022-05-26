@@ -1,36 +1,52 @@
-.nav001{
-   background-color: #1d1d1d;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 225px;
-    height: 100%;
-    padding: 20px 0;
-    transition: all 0.5s ease;
-    z-index: 1;
+.nav001 {
+  background-color: #1d1d1d;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 225px;
+  height: 100%;
+  padding: 20px 0;
+  transition: all 0.5s ease;
+  z-index: 1;
 }
-.nav-header{
-    color: white;
-    font-size: 25px;
-    padding-left: 25px;
-    font-weight: bold;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.nav-header {
+  color: white;
+  font-size: 25px;
+  padding-left: 25px;
+  font-weight: bold;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding-bottom: 3px;
+  
 }
-.horizontal-navbar{
-    background: rgb(4, 60, 92);
-    height: 70px;
-    width: 100%;
+.horizontal-navbar {
+  background: rgb(2, 53, 83);
+  height: 62px;
+  width: 100%;
+  
 }
 .horizontal-navbar ul {
-    float: right;
-    margin: 22px 10px 10px 10px;
-    list-style: none;
-   
-  }
-  .horizontal-navbar ul li {
-    float: left;
-    margin: 5px;
-    margin-right: 15px;
-    color: bisque;
-    text-decoration: none;
-  }
+  float: right;
+  list-style: none;
+}
+.horizontal-navbar ul li {
+  float: left;
+  margin-right: 30px;
+  color: bisque;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  
+}
+.dropDown-Menu {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 14px;
+  
+}
+.profile-pic{
+  height: 45px;
+  width: 45px;
+  border-radius: 100%;
+  margin-top: 11px;
+}
