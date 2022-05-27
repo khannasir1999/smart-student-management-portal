@@ -23,9 +23,21 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-      ) : (
-        ""
-      )}
+      ) : loginType === "Teacher" || loginType === "teacher" ? (
+       
+       
+       
+       
+       <div className="margin-all" >
+          <img src="https://ieltsfever.org/wp-content/uploads/2021/03/IELTSFever-FREE-Online-Test-Day-79.jpg"/>
+          
+        </div>
+
+
+
+
+
+      ):("")}
     </>
   );
 };

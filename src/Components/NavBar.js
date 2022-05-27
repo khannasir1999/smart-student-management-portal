@@ -30,6 +30,7 @@ import {
   FcMoneyTransfer,
   FcDiploma2,
 } from "react-icons/fc";
+import {MdPeople,MdAccountCircle,MdManageAccounts } from "react-icons/md";
 import { Link } from "react-router-dom";
 import "./Components_Styles/NavBar.css";
 import { NavDropdown } from "react-bootstrap";
@@ -199,16 +200,16 @@ const NavBar = (props) => {
 
             <SidebarContent>
               <Menu>
-                <MenuItem icon={<FaGem />}>
+                <MenuItem icon={<FcGlobe />}>
                   <Link to="/dashboard">Dashboard</Link>
                 </MenuItem>
-                <MenuItem icon={<FaGem />}>
+                <MenuItem icon = {<MdPeople/>}>
                   <Link to="/manage_attendance">Manage Attendance</Link>
                 </MenuItem>
-                <MenuItem icon={<FaGem />}>
+                <MenuItem icon={<MdManageAccounts/>}>
                   <Link to="/manage_students">Manage Students</Link>
                 </MenuItem>
-                <MenuItem icon={<FaGem />}>
+                <MenuItem icon={<MdAccountCircle/>}>
                   <Link to="/edit_teacher_profile">Profile</Link>
                 </MenuItem>
               </Menu>
