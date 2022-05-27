@@ -202,7 +202,7 @@ const ModelSignup = (props) => {
           <input
             type="number"
             name="age"
-            placeholder=" Enter Your Age"
+            placeholder="Age"
             className="form-input"
             value={registerAge}
             onChange={(e) => setRegisterAge(e.target.value)}

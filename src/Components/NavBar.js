@@ -51,20 +51,42 @@ const NavBar = (props) => {
 
   const btnLogout = async (e) => {
     e.preventDefault();
+    localStorage.removeItem("auth_user");
+    localStorage.removeItem("auth_token");
+    localStorage.removeItem("role_name");
+    localStorage.removeItem("first_name");
+    localStorage.removeItem("last_name");
+    localStorage.removeItem("email");
+    localStorage.removeItem("profile_pic");
+    localStorage.removeItem("phone_no");
+    localStorage.removeItem("age");
+    localStorage.removeItem("gender");
+    localStorage.removeItem("father_name");
+    localStorage.removeItem("Teacher_name");
+  
 
-    const res = await axios.post("http://localhost:8000/api/logout");
-    if (res.status === 200) {
-      localStorage.removeItem("auth_user");
-      localStorage.removeItem("auth_token");
-      swal({
-        position: "center",
-        icon: "success",
-        title: "Successfully Loged out",
-        timer: 1000,
-      });
+    swal({
+          position: "center",
+          icon: "success",
+          title: "Successfully Loged out",
+          timer: 1000,
+        });
+
+    //const res = await axios.post("http://localhost:8000/api/logout");
+    // if (res.status === 200) {
+    //   localStorage.removeItem("auth_user");
+    //   localStorage.removeItem("auth_token");
+    
+
+    //   swal({
+    //     position: "center",
+    //     icon: "success",
+    //     title: "Successfully Loged out",
+    //     timer: 1000,
+    //   });
       navigate("/");
     }
-  };
+  // };
   return (
     <>
       {(navItems === "admin" || navItems === "Admin") ? (

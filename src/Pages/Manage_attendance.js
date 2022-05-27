@@ -5,18 +5,19 @@ import "./Pages_Styles/Styles.css";
 //import "../Components/Components_Styles/Margin_pages.css";
 
 
-const Manage_attendance = ({ text }) => {
+const Manage_attendance = ({ attendance_data}) => {
   const [src, setSrc] = useState("");
 
+
   const Qrgenerate = () => {
-    QRCode.toDataURL(text)
-      .then((data) => {
-        setSrc(data);
-      })
-      .catch(function () {
-        console.log("Error");
-      });
-  };
+    setSrc(" ");
+    QRCode.toDataURL(attendance_data)
+      .then((setSrc))
+        
+
+     
+  
+    };
   const manualAttendance = () => {
       <form>
           <input type="field" placeholder="time"/>
@@ -32,7 +33,7 @@ const Manage_attendance = ({ text }) => {
         &nbsp; &nbsp; &nbsp;
         <button className="btn" onClick={manualAttendance}>Add Attendance manually</button>
         <br/>
-        <img className="QR_image" src={src} />
+        <img className="QR_image" src={src}/>
         
       </div>
     </>

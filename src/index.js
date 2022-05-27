@@ -9,12 +9,14 @@ import 'mdbreact/dist/css/mdb.css';
 const first_name = localStorage.getItem("first_name")
 const last_name = localStorage.getItem("last_name")
 const name = first_name  + " " + last_name
+const email = localStorage.getItem("email")
 ReactDOM.render(
   <React.StrictMode>
     <App
-     text = {JSON.stringify({
+     attendance_data = {JSON.stringify({
               name: name,
-              Date: new Date().toLocaleString()
+              email: email,
+              Date: new Date().toLocaleString(),
               
             
             })}/>

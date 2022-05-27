@@ -20,10 +20,11 @@ import Departments from "./Pages/Departments";
 import TermAndCondition from "./Pages/TermAndCondition";
 import Footer from "./Components/Footer";
 
-function App({text}) {
+function App({attendance_data}) {
 
   axios.interceptors.request.use(function(config){
     const token = localStorage.getItem('auth_token');
+    
     config.headers.Authorization = token ? `Bearer ${token}` : '';
     return config;
   })
@@ -43,7 +44,7 @@ function App({text}) {
           <Route path="profile" element={<Profile/>} />
           <Route path="teacher_dashboard" element={<Teacher_dashboard/>} />
           <Route path="edit_teacher_profile" element={<Edit_teacher_profile/>} />
-          <Route path="manage_attendance" element={<Manage_attendance text={text}/>} />
+          <Route path="manage_attendance" element={<Manage_attendance attendance_data={attendance_data}/>} />
           <Route path="manage_students" element={<Manage_students/>} />
           <Route path="/list/teachers" element={<ShowTeacher/>} />
           <Route path="/list/students" element={<ShowStudent/>} />
