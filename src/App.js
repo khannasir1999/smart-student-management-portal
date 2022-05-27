@@ -18,6 +18,7 @@ import "./Components/Components_Styles/Margin_pages.css"
 import axios from "axios";
 import Departments from "./Pages/Departments";
 import TermAndCondition from "./Pages/TermAndCondition";
+import Footer from "./Components/Footer";
 
 function App({text}) {
 
@@ -28,6 +29,7 @@ function App({text}) {
   })
   return (
     <>
+    <Footer/>
     <BrowserRouter>
       <Routes>
       {/* routes of mainpage */}

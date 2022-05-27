@@ -82,9 +82,9 @@ const NavBar = (props) => {
                   menuVariant="light"
                   id="nav-dropdown-dark-example"
                 >
-                  <NavDropdown.Item href="#action/3.1">
+                  <NavDropdown.Item>
                     {" "}
-                    <FcPortraitMode /> Profile
+                    <FcPortraitMode /> <Link to="/profile" > Profile </Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">
                     {" "}
@@ -173,7 +173,7 @@ const NavBar = (props) => {
                 >
                   <NavDropdown.Item href="#action/3.1">
                     {" "}
-                    <FcPortraitMode /> Profile
+                    <FcPortraitMode /><Link to="/profile" > Profile </Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">
                     {" "}

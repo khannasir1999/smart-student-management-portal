@@ -12,6 +12,7 @@ import {
 } from "reactstrap";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const S_Cards = () => {
     useEffect(() => {
@@ -28,7 +29,7 @@ const S_Cards = () => {
 
 
     return (
-        <>
+        <><Link to="/list/students">
             <div style={{ width: "18rem" }}>
                 <Card className="card-stats mb-4 mb-lg-0">
                     <CardBody>
@@ -55,6 +56,7 @@ const S_Cards = () => {
                     </CardBody>
                 </Card>
             </div>
+            </Link>
         </>
     );
 
