@@ -6,15 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
-
-
+const first_name = localStorage.getItem("first_name")
+const last_name = localStorage.getItem("last_name")
+const name = first_name  + " " + last_name
 ReactDOM.render(
   <React.StrictMode>
     <App
      text = {JSON.stringify({
-              id: 1,
-              name: 'nasir',
-              insider: true,
+              name: name,
               Date: new Date().toLocaleString()
               
             

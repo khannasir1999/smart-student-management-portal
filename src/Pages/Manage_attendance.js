@@ -33,6 +33,7 @@ const Manage_attendance = ({ text }) => {
         <button className="btn" onClick={manualAttendance}>Add Attendance manually</button>
         <br/>
         <img className="QR_image" src={src} />
+        
       </div>
     </>
   );
