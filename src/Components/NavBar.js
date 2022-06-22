@@ -16,11 +16,9 @@ import {
   SidebarContent,
 } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
-import { FaHeart, FaGem } from "react-icons/fa";
 import {
   FcFilingCabinet,
   FcGlobe,
-  FcAutmatic,
   FcLeftUp2,
   FcReading,
   FcServices,
@@ -34,28 +32,33 @@ import {MdPeople,MdAccountCircle,MdManageAccounts } from "react-icons/md";
 import { Link } from "react-router-dom";
 import "./Components_Styles/NavBar.css";
 import { NavDropdown } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
+import { useSelector,useDispatch } from 'react-redux'
+import { logout } from "../Action";
 
-const NavBar = (props) => {
+const NavBar = () => {
   const [isSignupVisible, setIsSignupVisible] = useState(false);
 
-  const navItems = localStorage.getItem("role_name");
+  const navItems = useSelector(state => state.loginReducer.role_name);
+
   const userName =
-    localStorage.getItem("first_name") +
+useSelector(state => state.loginReducer.first_name)
+    +
     " " +
-    localStorage.getItem("last_name");
-  const profilePic = localStorage.getItem("profile_pic");
-  console.log(profilePic);
-
+    useSelector(state => state.loginReducer.last_name);
+  const profilePic = useSelector(state => state.loginReducer.picture);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch()
   const btnLogout = async (e) => {
     e.preventDefault();
 
     const res = await axios.post("http://localhost:8000/api/logout");
     if (res.status === 200) {
-      localStorage.removeItem("auth_user");
-      localStorage.removeItem("auth_token");
+     dispatch(logout())
+     axios.interceptors.request.use((config) => {
+      config.headers.Authorization = "";
+      return config;
+    });
+
       swal({
         position: "center",
         icon: "success",
@@ -74,6 +77,7 @@ const NavBar = (props) => {
               <li>
                 <img
                   src={"http://localhost:8000/storage/media/" + profilePic}
+                  alt="Profile Pic"
                   className="profile-pic"
                 />
 
@@ -115,6 +119,9 @@ const NavBar = (props) => {
                 </MenuItem>
                 <MenuItem icon={<FcMultipleInputs />}>
                   <Link to="/departments">Departments</Link>
+                </MenuItem>
+                <MenuItem icon={<FcMoneyTransfer />}>
+                  <Link to="/subject">Subjects</Link>
                 </MenuItem>
                 <MenuItem icon={<FcMoneyTransfer />}>
                   <Link to="/fees">Manage Fee</Link>

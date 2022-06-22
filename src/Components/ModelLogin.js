@@ -4,9 +4,21 @@ import "./Components_Styles/Model.css";
 import axios from "axios";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
+import {
+  first_name,
+  last_name,
+  father_name,
+  email,
+  phone_no,
+  age,
+  gender,
+  role_name,
+  auth_token,
+  picture,
+} from "../Action";
+import { useDispatch } from "react-redux";
 
 const ModelLogin = (props) => {
-
   // code of model visibility........
   const showModal = () => {
     props.setIsLoginVisible(true);
@@ -28,15 +40,16 @@ const ModelLogin = (props) => {
 
   useEffect(() => {
     if (inputEmail) {
-      setInputError("")
+      setInputError("");
     }
   }, [inputEmail]);
 
   useEffect(() => {
     if (inputPassword) {
-      setInputError("")
+      setInputError("");
     }
-  }, [inputPassword])
+  }, [inputPassword]);
+  const dispatch = useDispatch();
 
   const login = async (e) => {
     e.preventDefault();
@@ -45,26 +58,35 @@ const ModelLogin = (props) => {
       const res = await axios.post("http://localhost:8000/api/login", {
         email: inputEmail,
         password: inputPassword,
-
       });
       if (res.status === 200) {
-        
         localStorage.setItem("auth_token", res.data.token);
-        localStorage.setItem("role_name", res.data.user.role_name);
-         localStorage.setItem("first_name",res.data.user.first_name);
-         localStorage.setItem("last_name",res.data.user.last_name);
-         localStorage.setItem("email",res.data.user.email);
-         localStorage.setItem("profile_pic",res.data.user.picture);
-         localStorage.setItem("phone_no",res.data.user.phone_no);
-         localStorage.setItem("age",res.data.user.age);
-         localStorage.setItem("gender",res.data.user.gender);
-         localStorage.setItem("father_name",res.data.user.father_name);
+        dispatch(auth_token(res.data.token));
+        dispatch(first_name(res.data.user.first_name));
+        dispatch(last_name(res.data.user.last_name));
+        dispatch(father_name(res.data.user.father_name));
+        dispatch(gender(res.data.user.gender));
+        dispatch(age(res.data.user.age));
+        dispatch(phone_no(res.data.user.phone_no));
+        dispatch(picture(res.data.user.picture));
+        dispatch(email(res.data.user.email));
+        dispatch(role_name(res.data.user.role_name));
+        // localStorage.setItem("auth_token", res.data.token);
+        // localStorage.setItem("role_name", res.data.user.role_name);
+        //  localStorage.setItem("first_name",res.data.user.first_name);
+        //  localStorage.setItem("last_name",res.data.user.last_name);
+        //  localStorage.setItem("email",res.data.user.email);
+        //  localStorage.setItem("profile_pic",res.data.user.picture);
+        //  localStorage.setItem("phone_no",res.data.user.phone_no);
+        //  localStorage.setItem("age",res.data.user.age);
+        //  localStorage.setItem("gender",res.data.user.gender);
+        //  localStorage.setItem("father_name",res.data.user.father_name);
         swal({
-          position: 'center',
-          icon: 'success',
-          title: 'Successfully Loged in',
-          timer: 1000
-        })
+          position: "center",
+          icon: "success",
+          title: "Successfully Loged in",
+          timer: 1000,
+        });
         props.setIsLoginVisible(false);
         navigate("/Dashboard");
       }
@@ -72,7 +94,6 @@ const ModelLogin = (props) => {
       setInputError("invalid credentials");
     }
   };
-  
 
   return (
     <>
@@ -110,9 +131,8 @@ const ModelLogin = (props) => {
           </button>
         </form>
         <div className="form">
-         
           <button className="switch-btn" onClick={handleModol}>
-          Forget Password ?
+            Forget Password ?
           </button>
         </div>
       </Modal>

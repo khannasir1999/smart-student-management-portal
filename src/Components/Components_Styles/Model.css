@@ -73,3 +73,22 @@ background-color: darkgrey;
     color: rgb(110, 4, 4);
     font-weight: bold;
   }
+  .btn{
+    border: 1px  ;
+    padding: 10px;
+   
+    width: 255px;
+    /* margin-top: 20px; */
+    background-color: #1890ff;
+     color: white;
+     cursor: pointer;
+     position: center;
+       
+ }
+ .form-search{
+    margin: 10px;
+    width: 255px;
+    height: 50px;
+    border: 2px solid rgb(137, 129, 129);
+    border-radius: 10px;
+}

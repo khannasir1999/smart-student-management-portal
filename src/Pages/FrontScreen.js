@@ -2,6 +2,7 @@ import "./Pages_Styles/FrontScreen.css";
 import ModelLogin from "../Components/ModelLogin";
 import { useState } from "react";
 
+
 const FrontScreen = () => {
   const [isLoginVisible, setIsLoginVisible] = useState(false);
   const [isSignupVisible, setIsSignupVisible] = useState(false);

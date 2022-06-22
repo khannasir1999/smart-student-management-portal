@@ -3,19 +3,27 @@ import { MDBDataTableV5 } from "mdbreact";
 import { useEffect } from "react";
 import axios from "axios";
 import "../Components/Components_Styles/Margin_pages.css";
+import {useSelector, useDispatch} from "react-redux"
+import { userGet } from "../Action";
 
-export default function ShowTeacher() {
-  const [teacherData, setTeacherData] = useState([]);
+const ShowAdmin = () => {
+  const [AdminData, setAdminData] = useState([]);
 
   useEffect(() => {
-    getTeacher();
+    getAdmin();
   }, []);
 
-  const getTeacher = async () => {
+  const getAdmin = async () => {
     const res = await axios.get("http://localhost:8000/api/users/admin");
     console.log(res);
-    setTeacherData(res.data);
+    setAdminData(res.data);
   };
+  const dispatch = useDispatch()
+  const reRender = useSelector(state => state.reRenderReducer.userGet)
+  if (reRender === "reRender") {
+     getAdmin()
+     dispatch(userGet("")) 
+  } 
 
   return (
     <div className="margin-all">
@@ -74,7 +82,7 @@ export default function ShowTeacher() {
               width: 100,
             },
           ],
-          rows: teacherData.map((items) => {
+          rows: AdminData.map((items)=>{
             return {
               name: items.first_name,
               father_name: items.father_name,
@@ -85,7 +93,7 @@ export default function ShowTeacher() {
               picture: (
                 <img
                   src={"http://localhost:8000/storage/media/" + items.picture}
-                  alt=" user Picture"
+                  alt="User"
                   className="data-img"
                 />
               ),
@@ -98,3 +106,4 @@ export default function ShowTeacher() {
     </div>
   );
 }
+export default ShowAdmin
