@@ -71,6 +71,7 @@ const NavBar = (props) => {
           title: "Successfully Loged out",
           timer: 1000,
         });
+        
 
     //const res = await axios.post("http://localhost:8000/api/logout");
     // if (res.status === 200) {

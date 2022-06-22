@@ -3,6 +3,7 @@ import QRCode from "qrcode";
 import { useState } from "react";
 import "./Pages_Styles/Styles.css";
 //import "../Components/Components_Styles/Margin_pages.css";
+import ModelSelectDepartment_cource from "../Components/ModelSelectDepartment_cource";
 
 const Manage_attendance = ({ attendance_data }) => {
   const [src, setSrc] = useState("");
@@ -24,10 +25,9 @@ const Manage_attendance = ({ attendance_data }) => {
           Generate QR
         </button>
         &nbsp; &nbsp; &nbsp;
-        <button className="btn" onClick={manualAttendance}>
-          Add Attendance manually
-        </button>
-        <br />
+        <button className="btn" onClick={manualAttendance}>Add Attendance manually</button>
+        <ModelSelectDepartment_cource />
+        <br/>
         <img className="QR_image" src={src} />
       </div>
     </>

@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
+const course_name = localStorage.getItem("course_name")
 const first_name = localStorage.getItem("first_name")
 const last_name = localStorage.getItem("last_name")
 const name = first_name  + " " + last_name
@@ -16,7 +17,10 @@ ReactDOM.render(
      attendance_data = {JSON.stringify({
               name: name,
               email: email,
+              course_name: course_name,
               Date: new Date().toLocaleString(),
+              
+
               
             
             })}/>
