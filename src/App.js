@@ -37,6 +37,7 @@ const App = ({ text }) => {
           <Route path="/" index element={<FrontScreen />} />
           {/* routes of navbar */}
           <Route path="/" element={<NavBar />}>
+            <Route path="dashboard" element={<Dashboard />} />
             <Route path="teacher" element={<Teacher />} />
             <Route path="departments" element={<Departments />} />
             <Route path="fees" element={<Fees />} />
@@ -56,7 +57,6 @@ const App = ({ text }) => {
             <Route path="/list/admin" element={<ShowAdmin />} />
             <Route path="term_and_condition" element={<TermAndCondition />} />
           </Route>
-            <Route path="dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </>

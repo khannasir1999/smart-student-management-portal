@@ -88,7 +88,7 @@ const ModelLogin = (props) => {
           timer: 1000,
         });
         props.setIsLoginVisible(false);
-        navigate("/Dashboard");
+        navigate("/dashboard");
       }
     } catch (error) {
       setInputError("invalid credentials");
