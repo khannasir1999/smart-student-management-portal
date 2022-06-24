@@ -13,7 +13,7 @@ const Manage_students = () => {
   
     const getStudent = async () => {
       const res = await axios.get("http://localhost:8000/api/users/student");
-      console.log(res);
+      console.log(res.data);
       setTeacherData(res.data)
     }
   

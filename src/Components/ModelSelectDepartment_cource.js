@@ -27,19 +27,21 @@ const ModelSelectDepartment_cource = () => {
 
     const getDepartment = async () => {
         const res = await axios.get("http://localhost:8000/api/department/");
-        console.log(res);
+
         setDepartment(res.data);
+       
     };
     
     // code for get courses .................................
     const [course, setCourse] = useState([])
     const [course_name, setCourse_name] = useState("")
+    const [department_name, setDepartment_name] = useState("")
 
     
 
     const getCouse = async (id) => {
         const res = await axios.get("http://localhost:8000/api/show_course/" + id);
-        console.log(res);
+        console.log(res.data.Courses_detail);
         setCourse(res.data.Courses_detail);
     };
     
@@ -47,6 +49,8 @@ const ModelSelectDepartment_cource = () => {
     const courceSelected = (e) => {
         e.preventDefault();
         localStorage.setItem("course_name", course_name)
+        localStorage.setItem("department_name", department_name)
+        
         setIsModalVisible(false)
         window.location = "/manage_attendance"
     };
@@ -69,27 +73,31 @@ const ModelSelectDepartment_cource = () => {
                 <form className="form">
 
                     <select
-                        name="Department name"
                         className="form-input"
                         onChange={(e) => {
-                           
                             getCouse(e.target.value)
+                            console.log(e.target.id)
+                        
+                            
                         }}
-                    >
+                        >
                         <option value="none" selected disabled hidden>
                             Select Department
                         </option>
                         {
                             department.map((items) => {
+
                                 return (
-                                    <option value={items.id} >      {items.department_name}</option>
+                                    <option value={items.id} id={items.department_name} 
+                                   
+                                 >      {items.department_name}</option>
                                 )
                             })
                         }
                     </select>
 
 
-
+{console.log(department_name)}
                     <select
                         name="Signup Type"
                         className="form-input"

@@ -3,7 +3,9 @@ import "./Components_Styles/Footer.css"
 
 const Footer = () => (
   <div className="footer">
-    <p><small>&copy; Copyright 2022, Example Corporation</small></p>
+    <p><small>&copy; Copyright 2022, Contributors M Nasir Hussain Khan ||
+      Ali Masood ||
+      Haseeb Altaf </small></p>
   </div>
 );
 
