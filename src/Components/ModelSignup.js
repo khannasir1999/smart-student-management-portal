@@ -3,8 +3,11 @@ import "./Components_Styles/Model.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import swal from "sweetalert";
+import { useDispatch } from "react-redux";
+import { userGet } from "../Action";
 const ModelSignup = (props) => {
   // code of model visibility..........................................
+  const dispatch = useDispatch()
   const showModal = () => {
     props.setIsSignupVisible(true);
   };
@@ -116,7 +119,8 @@ const ModelSignup = (props) => {
         "http://localhost:8000/api/register",
         formData
       );
-      console.log(res);
+      // console.log(res);
+      dispatch(userGet("reRender"))
       props.setIsSignupVisible(false);
       swal({
         position: "center",

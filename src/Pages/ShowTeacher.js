@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { MDBDataTableV5 } from 'mdbreact';
 import { useEffect } from 'react';
 import axios from 'axios';
+import {useSelector, useDispatch} from "react-redux"
+import { userGet } from "../Action";
 
 export default function ShowTeacher() {
 
@@ -17,7 +19,12 @@ export default function ShowTeacher() {
     console.log(res);
     setTeacherData(res.data)
   }
-
+  const dispatch = useDispatch()
+  const reRender = useSelector(state => state.reRenderReducer.userGet)
+  if (reRender === "reRender") {
+     getTeacher()
+     dispatch(userGet("")) 
+  } 
   return <div className='margin-all'>
     <div style={{ textAlign: "center", marginBottom: "10px" }} ><h2 style={{ fontWeight: "bold" }}>Teacher's Data</h2></div>
 
