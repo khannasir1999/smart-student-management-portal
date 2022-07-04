@@ -23,6 +23,7 @@ const course_name = localStorage.getItem("course_name")
 const department_name = localStorage.getItem("department_name")
 const first_name = localStorage.getItem("first_name")
 const last_name = localStorage.getItem("last_name")
+const email = localStorage.getItem("email")
 const name = first_name  + " " + last_name
 
 // Making store persist ................................................

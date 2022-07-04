@@ -1,5 +1,5 @@
 import React from "react";
-// import { Nav, NavLink, Bars, NavMenu, NavBtn } from "./NavbarElements";
+//import { Nav, NavLink, Bars, NavMenu, NavBtn } from "./NavbarElements";
 import { Outlet } from "react-router-dom";
 import axios from "axios";
 import swal from "sweetalert";
@@ -254,6 +254,6 @@ useSelector(state => state.loginReducer.first_name)
       <Outlet />
     </>
   );
-};
+}};
 
 export default NavBar;
