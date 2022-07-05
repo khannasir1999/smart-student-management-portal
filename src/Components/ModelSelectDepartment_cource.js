@@ -5,7 +5,7 @@ import "./Components_Styles/Model.css";
 import axios from "axios";
 
 
-const ModelSelectDepartment_cource = () => {
+const ModelSelectDepartment_cource = (props) => {
 
     // code for Model visibility.........................
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -48,11 +48,13 @@ const ModelSelectDepartment_cource = () => {
    // code for model submission..................................  
     const courceSelected = (e) => {
         e.preventDefault();
+
         localStorage.setItem("course_name", course_name)
         localStorage.setItem("department_name", department_name)
+        // props.setShowQR('show')
         
-        setIsModalVisible(false)
         window.location = "/manage_attendance"
+        setIsModalVisible(false)
     };
     
     console.log(course_name)
@@ -97,7 +99,7 @@ const ModelSelectDepartment_cource = () => {
                     </select>
 
 
-{console.log(department_name)}
+
                     <select
                         name="Signup Type"
                         className="form-input"

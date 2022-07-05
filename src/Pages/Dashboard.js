@@ -9,12 +9,17 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { useSelector } from "react-redux";
+import NavBar from "../Components/NavBar";
+import { Navbar } from "reactstrap";
 
 const Dashboard = () => {
   const loginType = useSelector((state) => state.loginReducer.role_name);
 
   return (
     <>
+    <div>
+     
+    </div>
       {loginType === "admin" || loginType === "Admin" ? (
         <div className="margin-all">
           <div className="cards-inline">

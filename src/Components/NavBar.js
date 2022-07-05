@@ -1,5 +1,5 @@
 import React from "react";
-//import { Nav, NavLink, Bars, NavMenu, NavBtn } from "./NavbarElements";
+// import { Nav, NavLink, Bars, NavMenu, NavBtn } from "./NavbarElements";
 import { Outlet } from "react-router-dom";
 import axios from "axios";
 import swal from "sweetalert";
@@ -50,19 +50,6 @@ useSelector(state => state.loginReducer.first_name)
   const dispatch = useDispatch()
   const btnLogout = async (e) => {
     e.preventDefault();
-    localStorage.removeItem("auth_user");
-    localStorage.removeItem("auth_token");
-    localStorage.removeItem("role_name");
-    localStorage.removeItem("first_name");
-    localStorage.removeItem("last_name");
-    localStorage.removeItem("email");
-    localStorage.removeItem("profile_pic");
-    localStorage.removeItem("phone_no");
-    localStorage.removeItem("age");
-    localStorage.removeItem("gender");
-    localStorage.removeItem("father_name");
-    localStorage.removeItem("Teacher_name");
-  
 
     const res = await axios.post("http://localhost:8000/api/logout");
     if (res.status === 200) {
@@ -80,7 +67,7 @@ useSelector(state => state.loginReducer.first_name)
       });
       navigate("/");
     }
-  // };
+  };
   return (
     <>
       {(navItems === "admin" || navItems === "Admin") ? (
@@ -230,7 +217,7 @@ useSelector(state => state.loginReducer.first_name)
                   <Link to="/manage_students">Manage Students</Link>
                 </MenuItem>
                 <MenuItem icon={<MdAccountCircle/>}>
-                  <Link to="/edit_teacher_profile">Profile</Link>
+                  <Link to="/profile">Profile</Link>
                 </MenuItem>
               </Menu>
             </SidebarContent>
@@ -254,6 +241,6 @@ useSelector(state => state.loginReducer.first_name)
       <Outlet />
     </>
   );
-}};
+};
 
 export default NavBar;

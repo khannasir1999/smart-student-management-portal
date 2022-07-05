@@ -1,7 +1,6 @@
 import "./App.css";
 import Dashboard from "./Pages/Dashboard";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Teacher from "./Pages/Teacher";
 import Fees from "./Pages/Fees";
 import Profile from "./Pages/Profile";
 import NavBar from "./Components/NavBar";
@@ -20,7 +19,6 @@ import Footer from "./Components/Footer";
 import Subject from "./Pages/Subject";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
-import React from "react";
 
 const App = ({ text }) => {
   axios.interceptors.request.use((config) => {
@@ -39,7 +37,6 @@ const App = ({ text }) => {
           {/* routes of navbar */}
           <Route path="/" element={<NavBar />}>
             <Route path="dashboard" element={<Dashboard />} />
-            <Route path="teacher" element={<Teacher />}/> 
             <Route path="departments" element={<Departments />} />
             <Route path="fees" element={<Fees />} />
             <Route path="subject" element={<Subject />} />
@@ -57,11 +54,12 @@ const App = ({ text }) => {
             <Route path="/list/students" element={<ShowStudent />} />
             <Route path="/list/admin" element={<ShowAdmin />} />
             <Route path="term_and_condition" element={<TermAndCondition />} />
-            <Route path="Footer" element={<Footer/>}/>
           </Route>
+        
         </Routes>
       </BrowserRouter>
     </>
-  )  
+  );
 };
+
 export default App;

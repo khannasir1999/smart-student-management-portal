@@ -7,12 +7,13 @@ import ModelSelectDepartment_cource from "../Components/ModelSelectDepartment_co
 import axios from "axios";
 import { useEffect } from "react";
 
-const Manage_attendance = ({ attendance_data }) => {
+const Manage_attendance = ({text}) => {
   
   const [src, setSrc] = useState("");
   const [attendance, setAttendance] = useState([])
   const [studentData, setStudentData] = useState([]);
-  const [attendanceStatus, setAttendanceStatus] = useState("")
+  const [showQR, setShowQR] = useState('')
+  // const [attendanceStatus, setAttendanceStatus] = useState("")
   
   useEffect(() => {
     getStudentData();
@@ -21,7 +22,7 @@ const Manage_attendance = ({ attendance_data }) => {
 
   // QR code .......................................................
   const Qrgenerate = () => {
-    QRCode.toDataURL(attendance_data).then(setSrc);
+    QRCode.toDataURL(text).then(setSrc);
   };
   const manualAttendance = () => {
     <form>
@@ -50,14 +51,15 @@ const Manage_attendance = ({ attendance_data }) => {
   return (
     <>
       <div className="margin-all">
+        {showQR === 'show' ? (
         <button onClick={Qrgenerate} className="btn">
           Generate QR
         </button>
+
+        ): ""}
         &nbsp; &nbsp; &nbsp;
-        <button className="btn" onClick={manualAttendance}>
-          Add Attendance manually
-        </button>
-        <ModelSelectDepartment_cource />
+       
+        <ModelSelectDepartment_cource setShowQR={setShowQR} />
         <br />
         <img className="QR_image" src={src} />
       
@@ -95,6 +97,12 @@ const Manage_attendance = ({ attendance_data }) => {
              
 
             },
+            {
+              label: "Button",
+              field: "btn"
+             
+
+            },
 
           
           ],
@@ -103,7 +111,10 @@ const Manage_attendance = ({ attendance_data }) => {
               name: items.first_name + " " + items.last_name,
               gender: items.gender,
               id: items.id,
-              status: attendance.find(val=> val.student_id === items.id)? "present" : "absent"
+              status: attendance.find(val=> val.student_id === items.id)? "present" : "absent",
+              btn: "h"
+              
+              
               
               
               

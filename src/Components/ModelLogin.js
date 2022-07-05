@@ -61,6 +61,9 @@ const ModelLogin = (props) => {
       });
       if (res.status === 200) {
         localStorage.setItem("auth_token", res.data.token);
+        localStorage.setItem("first_name",res.data.user.first_name);
+        localStorage.setItem("last_name",res.data.user.last_name);
+        localStorage.setItem("email",res.data.user.email);
         dispatch(auth_token(res.data.token));
         dispatch(first_name(res.data.user.first_name));
         dispatch(last_name(res.data.user.last_name));
@@ -73,9 +76,6 @@ const ModelLogin = (props) => {
         dispatch(role_name(res.data.user.role_name));
         // localStorage.setItem("auth_token", res.data.token);
         // localStorage.setItem("role_name", res.data.user.role_name);
-        //  localStorage.setItem("first_name",res.data.user.first_name);
-        //  localStorage.setItem("last_name",res.data.user.last_name);
-        //  localStorage.setItem("email",res.data.user.email);
         //  localStorage.setItem("profile_pic",res.data.user.picture);
         //  localStorage.setItem("phone_no",res.data.user.phone_no);
         //  localStorage.setItem("age",res.data.user.age);
