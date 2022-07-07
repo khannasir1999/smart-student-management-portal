@@ -1,7 +1,6 @@
 import "./App.css";
 import Dashboard from "./Pages/Dashboard";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Fees from "./Pages/Fees";
 import Profile from "./Pages/Profile";
 import NavBar from "./Components/NavBar";
 import FrontScreen from "./Pages/FrontScreen";
@@ -38,7 +37,6 @@ const App = ({ text }) => {
           <Route path="/" element={<NavBar />}>
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="departments" element={<Departments />} />
-            <Route path="fees" element={<Fees />} />
             <Route path="subject" element={<Subject />} />
             <Route path="profile" element={<Profile />} />
             <Route

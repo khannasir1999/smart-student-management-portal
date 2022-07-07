@@ -73,6 +73,25 @@ export const logout = () => {
     type: "logout",
   };
 };
+export const student_id = (val) => {
+  return {
+    type: "student_id",
+    payload: val,
+  }
+};
+export const class_id = (val) => {
+  return {
+    type: "class_id",
+    payload: val,
+  }
+};
+export const attendance_status = (val) => {
+  return {
+    type: "attendance_status",
+    payload: val,
+  }
+};
+
 
 // action of reRenderReducer.................................................
 

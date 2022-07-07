@@ -123,9 +123,7 @@ useSelector(state => state.loginReducer.first_name)
                 <MenuItem icon={<FcMoneyTransfer />}>
                   <Link to="/subject">Subjects</Link>
                 </MenuItem>
-                <MenuItem icon={<FcMoneyTransfer />}>
-                  <Link to="/fees">Manage Fee</Link>
-                </MenuItem>
+               
                 <MenuItem icon={<FcLeftUp2 />}>
                   <ModelSignup
                     isSignupVisible={isSignupVisible}
